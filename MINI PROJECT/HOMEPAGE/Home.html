@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trip Buddy</title>
+    <!-- <link rel="stylesheet" href="Home.css"> -->
+     <style>
+        body{
+     background-image:url("https://imgs.search.brave.com/d-DM3cw85SVWBl1YZ4GsJ0jF2_hQ5gdSr34ZepQ4TsA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTMy/MTY3NjMyMC92ZWN0/b3Ivb2xkLXZpbnRh/Z2UtcGFwZXItd2l0/aC13aW5kLXJvc2Ut/Y29tcGFzcy1zaWdu/LmpwZz9zPTYxMng2/MTImdz0wJms9MjAm/Yz16WDZKQWMzSlc0/NTFKOV85a01SMUMz/eEUwdjZZQnFYcHdl/emF2R0thSVJRPQ");
+    background-size: cover;
+    backdrop-filter: blur(1px);
+     
+    font-family:Arial, sans-serif;
+    margin:0;
+    padding:0;
+    filter: blur();
+}
+/* .hero {
+    position: relative;
+    height: 100vh;
+    background-image: url('https://source.unsplash.com/1600x900/?travel,adventure'); /* Background image 
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-content {
+    background: rgba(0, 0, 0, 0.4); /* Semi-transparent background 
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 700px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-btn {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: #1E90FF;
+    border: none;
+    border-radius: 50px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.cta-btn:hover {
+    background-color: #FFD700; /* Change color on hover 
+}*/
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1px 1px;
+    background-color: #1E90FF;
+    color: white;
+    padding: 0 20px;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+    font-family: 'Georgia', serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+    padding: 1px 1px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #FFD700, #FF6347);/* Gold to Tomato gradient */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+header .logo .icon {
+    font-size: 3rem;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+/* Add a hover effect for the logo */
+header .logo:hover {
+    transform: scale(1.05);
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+header .logo:hover .icon {
+    transform: rotate(15deg); /* Rotate the icon slightly */
+}
+
+header .logo h1 {
+    font-size: 2rem;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 15px;
+    padding: 1px 1px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #FFD700;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.profile-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.username {
+    font-size: 1rem;
+    font-weight: bold;
+}
+.dropdown {
+    display: none; /* Initially hidden */
+    position: absolute;
+    top: 45px;
+    right: 0;
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 150px;
+}
+
+.dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown ul li {
+    border-bottom: 1px solid #ddd;
+}
+
+.dropdown ul li:last-child {
+    border-bottom: none;
+}
+
+.dropdown ul li a {
+    display: block;
+    padding: 10px;
+    color: black;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown ul li a:hover {
+    background-color: #f0f0f0;
+}
+
+/* Show dropdown when profile is hovered */
+.profile:hover .dropdown {
+    display: block;
+}
+
+
+ .hero{
+    text-align: center;
+    font-size: 2.4rem;
+    font-style: oblique;
+}
+/* .hero {
+    /* background-image: url('https://example.com/hero-image.jpg'); Replace with your image URL 
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    position: relative;
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+} */
+/* 
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    /* height: max-content;
+    width: 100%; 
+}
+.search-container input {
+    padding: 10px;
+    width: 250px;
+    border-radius: 50px;
+    border: solid black;
+    font-size: 1rem;
+    padding-left: 35px; /* Space for the icon 
+    position: relative;
+}
+.search-container input::placeholder {
+    color: #bbb;
+}
+.search-container i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #bbb;
+}
+
+.search-container button {
+    padding: 10px 20px;
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.search-container button:hover {
+    background-color: #e5533e;
+} */
+
+/* /* .cta{
+    background-color: #FFC107;
+    color: black;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px; */
+ 
+/* Styling for the destinations section */
+/* Basic styling */
+.destinations {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.destination-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Each destination */
+.destination {
+    perspective: 1000px; /* Enable 3D effect */
+}
+
+.destination-inner {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.destination:hover .destination-inner {
+    transform: rotateY(180deg); /* Flip the card */
+}
+
+/* Front of the destination (image) */
+.destination-front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.destination-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Back of the destination (content) */
+.destination-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    text-align: center;
+    transform: rotateY(180deg); /* Initially hidden behind the front */
+    backface-visibility: hidden;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.destination-back h3 {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.destination-back p {
+    font-size: 18px;
+}
+
+
+/* General styling for the section */
+/* General styling for the section */
+.testimonials {
+    text-align: center;
+    margin: 50px;
+}
+
+/* Envelope container */
+.envelope {
+    position: relative;
+    display: inline-block;
+    background-image: url("https://imgs.search.brave.com/v9zpTCMTchLHq6g8jTV5CqMZZc0QrD3lHK4qVtLkzGY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTM5/OTA2MTU0MC9waG90/by9ibHVlLWVudmVs/b3BlLXNlYWxlZC13/aXRoLWdvbGQtY29s/b3JlZC13YXgtc3Rh/bXAuanBnP3M9NjEy/eDYxMiZ3PTAmaz0y/MCZjPTVhX3FKX05a/OTNuTGtRcjJDdzU4/YW54VFJCNHRvbDBl/YmFvTGJrOGppeXM9");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: #643333; /* Light background for the envelope */
+    padding: 30px;
+    border-radius: 15px; /* Rounded corners */
+    border: 2px solid #ccc; /* Light border for the envelope */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    overflow: hidden;
+    transform-origin: center top;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Envelope flaps (triangular shapes) */
+.envelope::before, .envelope::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+}
+
+.envelope::before {
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-bottom: 20px solid #f2f2f2;
+}
+
+.envelope::after {
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-top: 20px solid #f2f2f2;
+}
+
+/* Hover effect to open the envelope */
+.envelope:hover {
+    transform: scaleY(1.1); /* Slightly open the envelope */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2); /* Deep shadow on hover */
+}
+
+/* Styling for the testimonials */
+.testimonial {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    opacity: 0; /* Start hidden */
+    transform: translateY(20px); /* Start position for animation */
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* Reveal testimonials when the envelope is hovered */
+.envelope:hover .testimonial {
+    opacity: 1; /* Make them visible */
+    transform: translateY(0); /* Move them to their normal position */
+}
+
+/* Heading styling */
+h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+/* footer{
+    margin: auto;
+    
+} */
+footer {
+    text-align: center;
+    padding: 1px 1px;
+    background-color: #1E90FF;
+    color: white;
+    margin-top: 40px;
+}
+    /*background-image: filter: blur(8px);
+}
+
+
+
+/*.hero{
+    background-image:url("https://img.jagrantv.com/webstories/ws4431/1686288494-1.jpg");
+}*/
+/* CSS Styles */
+/* .travel-planner {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    margin: 20px;
+    overflow: hidden;
+  } */
+  /* .destination-grid {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    margin: 20px;
+    overflow: hidden;
+  }
+  .image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  .image:hover {
+    transform: scale(1.1);
+  }
+  
+  .caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  
+  .image:hover + .caption {
+    opacity: 1;
+  } */
+</style>
+</head>
+<body>
+    <!-- <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Discover Your Next Adventure</h1>
+            <p class="hero-subtitle">Plan your dream trip with us and explore the world like never before!</p>
+            <a href="#explore" class="cta-btn">Start Your Journey</a>
+        </div>
+    </section> -->
+    
+    
+    <!-- <header>
+        <nav class="navbar">
+            <div class="logo">Trip Buddy</div>
+           
+                <a href="#home">Home</a>
+                <a href="#plans">Plans</a>
+                <a href="#guide">Guide</a>
+                <a href="#aboutus">About</a>
+                <a href="#contactus">Contact Us</a>
+        </nav>
+        <a class="cta" href="#">Start planning your Adventure</a>-->
+        <!-- <div class="icons">
+            <i class="fas fa-search" id="search-btn"></i>
+            <i class="fas fa-user" id="login-btn"></i>
+        </div> -->
+
+        <!-- <form action=""class="search-bar-container">
+            <input type="search" id="search-bar" placeholder="search here...">
+            <label for="search-bar"></label>
+        </form> 
+</header> -->
+
+
+
+<!--<div class="bg-image">
+    <img src="https://media.licdn.com/dms/image/C5112AQE3oeeO0JGq_g/article-cover_image-shrink_720_1280/0/1581352055555?e=2147483647&v=beta&t=nTn9gfTAlqeWjPs524SjpinXiczcJTsxSpwgY2BgwLk">
+ </div>-->
+  <!-- <a href="Aboutus.html"></a> -->
+ <header>
+    <div class="logo">
+        <span class="icon">✈️</span>
+        <h1>Trip Buddy</h1>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="Home.html">Home</a></li>
+            <li><a href="index.html">Plans</a></li>
+            <li><a href="Guide.html">Guide</a></li>
+            <li><a href="Aboutus.html">About</a></li>
+            <li><a href="Login.html">Login</a></li>
+        </ul>
+    </nav>
+    <div class="profile">
+        <img src="https://png.pngtree.com/png-vector/20191110/ourmid/pngtree-avatar-icon-profile-icon-member-login-vector-isolated-png-image_1978396.jpg" alt="Profile" class="profile-icon">
+        <!-- <span class="username">John Doe</span> -->
+        <div class="dropdown">
+            <ul>
+                <li><a href="profile.html">View Profile</a></li>
+                <li><a href="settings.html">Settings</a></li>
+                <li><a href="Home.html">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+<main>
+   <section class="hero">
+     <!--<div class="bg-image">
+        <img src="https://media.licdn.com/dms/image/C5112AQE3oeeO0JGq_g/article-cover_image-shrink_720_1280/0/1581352055555?e=2147483647&v=beta&t=nTn9gfTAlqeWjPs524SjpinXiczcJTsxSpwgY2BgwLk">
+     </div>-->
+    <div class="hero-content">
+        <h1>Explore The World Your Way</h1>
+        <p><marquee>Personalised travel planning to suit your style and budget</marquee></p>
+        <!-- <div class="search-container">
+           <input type="text" id="destination" placeholder="Enter a destination...">
+            <div class="search"><img src="https://cdn.pixabay.com/photo/2021/07/02/04/48/search-6380865_1280.png"></div> -->
+           <!-- <button onclick="searchDestination()">Search</button>  -->
+           <!-- <button onclick="searchDestination()"><i class="fas fa-search"></i></button>  
+       </div> -->
+    </div>
+      
+      <!-- <form action=""class="search-bar-container">
+        <input type="search" id="search-bar" placeholder="search here...">
+        <label for="search-bar"></label>
+    </form>  -->
+      <!-- <input type="text" placeholder="Where to next?"/>-->
+      
+      <!-- <button>Discover Your Destination</button> -->
+   </section>
+</main> 
+<section class="destinations">
+    <h2>Popular Destinations</h2>
+    <div class="destination-grid">
+        <div class="destination">
+            <div class="destination-inner">
+                <div class="destination-front">
+                    <img src="https://assets.cntraveller.in/photos/6368e177a788c013ce0f6c13/master/pass/golden-temple-lead.jpg" alt="Amritsar">
+                </div>
+                <div class="destination-back">
+                    <h3>Amritsar</h3>
+                    <p>Experience the beauty of <b>Golden City</b> of India.Amritsar is a city where spirituality and history intertwine, offering a peaceful escape for all who visit.Known for its warm hospitality, Amritsar welcomes travelers with open arms and a rich cultural heritage.
+                        The vibrant streets of Amritsar are filled with tradition, from the bustling markets to the mouthwatering Punjabi cuisine.</p>
+                </div>
+            </div>
+        </div>
+        <div class="destination">
+            <div class="destination-inner">
+                <div class="destination-front">
+                    <img src="https://i.pinimg.com/736x/ce/00/28/ce00280533cff5de234c97718258432e.jpg" alt="Rishikesh">
+                </div>
+                <div class="destination-back">
+                    <h3>Rishikesh</h3>
+                    <p>The <b> Yoga Capital Of The World </b> awaits you.The tranquil banks of the Ganges River, paired with breathtaking views of the surrounding mountains, create an atmosphere of profound serenity. Rishikesh is not only a spiritual retreat but also an adventure lover’s paradise, offering thrilling activities like river rafting and trekking.</p>
+                </div>
+            </div>
+        </div>
+        <div class="destination">
+            <div class="destination-inner">
+                <div class="destination-front">
+                    <img src="https://santramholidays.in/wp-content/uploads/2021/09/Agra-tour-with-santram-holidays.webp" alt="Agra">
+                </div>
+                <div class="destination-back">
+                    <h3>Agra</h3>
+                    <p>The city of <b>Love, History and Beauty</b> invites you.Agra is a city that exudes timeless beauty and rich history, renowned for being the home of the iconic Taj Mahal. As one of India's most cherished destinations, it showcases a blend of majestic Mughal architecture, including the stunning Agra Fort and Fatehpur Sikri. The city's vibrant culture, delicious cuisine, and warm hospitality make it a truly unforgettable experience.</p>
+                </div>
+            </div>
+        </div>
+        <div class="destination">
+            <div class="destination-inner">
+                <div class="destination-front">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/East_facade_Hawa_Mahal_Jaipur_from_ground_level_%28July_2022%29_-_img_01.jpg/640px-East_facade_Hawa_Mahal_Jaipur_from_ground_level_%28July_2022%29_-_img_01.jpg" alt="Jaipur">
+                </div>
+                <div class="destination-back">
+                    <h3>Jaipur</h3>
+                    <p>The <b>Pink City</b> of India welcomes you.Famed for its majestic forts like Amber Fort, City Palace, and Hawa Mahal, Jaipur transports visitors to a bygone era of kings and queens. Its bustling bazaars, filled with vibrant textiles, jewelry, and handicrafts, add a unique charm to the city. Known for its delicious Rajasthani cuisine, warm hospitality, and colorful traditions, Jaipur offers an unforgettable experience.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+  
+              <!-- <div class="envelope-top">
+                <img src="https://assets.cntraveller.in/photos/6368e177a788c013ce0f6c13/master/pass/golden-temple-lead.jpg" alt="Amritsar">
+              </div>
+              <div class="envelope-bottom">
+                <div class="caption">
+                   <h2>Destination Name</h2>
+                  <p>Short Description</p> -->
+                  <!-- <h3>Amritsar</h3>
+                  <p>Experience the beauty of <b>Golden City</b> of India</p>
+                </div>
+              </div> -->
+              <!-- <div class="envelope-top">
+                <img src="https://assets.cntraveller.in/photos/6368e177a788c013ce0f6c13/master/pass/golden-temple-lead.jpg" alt="Amritsar">
+              </div>
+              <div class="envelope-bottom">
+                <div class="caption"> -->
+                  <!-- <h2>Destination Name</h2>
+                  <p>Short Description</p> 
+                  <h3>Amritsar</h3>
+                  <p>Experience the beauty of <b>Golden City</b> of India</p>
+                </div>
+              </div>
+              <div class="envelope-top">
+                <img src="https://assets.cntraveller.in/photos/6368e177a788c013ce0f6c13/master/pass/golden-temple-lead.jpg" alt="Amritsar">
+              </div>
+              <div class="envelope-bottom">
+                <div class="caption">
+                   <h2>Destination Name</h2>
+                  <p>Short Description</p> 
+                  <h3>Amritsar</h3>
+                  <p>Experience the beauty of <b>Golden City</b> of India</p>
+                </div>
+              </div>
+            </div>
+          </div> -->
+        <!-- <div class="destination">
+            <img src="https://assets.cntraveller.in/photos/6368e177a788c013ce0f6c13/master/pass/golden-temple-lead.jpg" alt="Amritsar">
+            <h3>Amritsar</h3>
+            <p>Experience the beauty of <b>Golden City</b> of India</p>
+        </div> 
+        <div class="destination">
+            <img src="https://i.pinimg.com/736x/ce/00/28/ce00280533cff5de234c97718258432e.jpg" alt="Rishikesh">
+            <h3>Rishikesh</h3>
+            <p>The <b> Yoga Capital Of The World </b> awaits you</p>
+        </div>
+        <div class="destination">
+            <img src="https://santramholidays.in/wp-content/uploads/2021/09/Agra-tour-with-santram-holidays.webp" alt="Agra">
+            <h3>Agra</h3>
+            <p>The city of <b>Love, History and Beauty</b> invites you.</p>
+        </div>
+        <div class="destination">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/East_facade_Hawa_Mahal_Jaipur_from_ground_level_%28July_2022%29_-_img_01.jpg/640px-East_facade_Hawa_Mahal_Jaipur_from_ground_level_%28July_2022%29_-_img_01.jpg" alt="Jaipur">
+            <h3>Jaipur</h3>
+            <p>The <b>Pink City</b> of India welcomes you.</p>
+        </div>  
+     </div>-->
+
+
+<section class="testimonials">
+    <h2>What our Travelers Say</h2>
+    <div class="envelope">
+        <div class="testimonial">
+            <p>"Trip Buddy made my trip unforgettable!" - Swati</p>
+        </div>
+        <div class="testimonial">
+            <p>"Best Travel Planning Service Ever" - Ritu</p>
+        </div>
+    </div>
+</section>
+
+
+    
+<!-- <footer>
+    <p>&copy; 2024 Trip Buddy Travel Planner. All rights reserved.</p>
+    <ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</footer>     -->
+<footer>
+    <p>&copy; 2024 Travel Planner. All rights reserved.</p>
+</footer>
+</body>
+</html>

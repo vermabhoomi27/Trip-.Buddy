@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Trip Buddy</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        /* header {
+            background-color: #0078d7;
+            color: white;
+            padding: 20px 10%;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        } */
+        header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1px 1px;
+    background-color: #1E90FF;
+    color: white;
+    padding: 0 20px;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+    font-family: 'Georgia', serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+    padding: 1px 1px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #FFD700, #FF6347);/* Gold to Tomato gradient */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+header .logo .icon {
+    font-size: 3rem;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+/* Add a hover effect for the logo */
+header .logo:hover {
+    transform: scale(1.05);
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+header .logo:hover .icon {
+    transform: rotate(15deg); /* Rotate the icon slightly */
+}
+
+header .logo h1 {
+    font-size: 2rem;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 15px;
+    padding: 1px 1px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #FFD700;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.profile-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.username {
+    font-size: 1rem;
+    font-weight: bold;
+}
+.dropdown {
+    display: none; /* Initially hidden */
+    position: absolute;
+    top: 45px;
+    right: 0;
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 150px;
+}
+
+.dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown ul li {
+    border-bottom: 1px solid #ddd;
+}
+
+.dropdown ul li:last-child {
+    border-bottom: none;
+}
+
+.dropdown ul li a {
+    display: block;
+    padding: 10px;
+    color: black;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown ul li a:hover {
+    background-color: #f0f0f0;
+}
+
+/* Show dropdown when profile is hovered */
+.profile:hover .dropdown {
+    display: block;
+}
+        .about-section {
+            padding: 40px 10%;
+            background-color: #ffffff;
+            text-align: center;
+        }
+        .about-section h2 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .about-section p {
+            font-size: 18px;
+            color: #666;
+            line-height: 1.8;
+        }
+        /* footer {
+            background-color: #0078d7;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        } */
+        footer {
+    text-align: center;
+    padding: 1px 1px;
+    background-color: #1E90FF;
+    color: white;
+    margin-top: 40px;
+}
+        .team-section {
+        padding: 40px 10%;
+        background-color: #f1f1f1;
+    }
+
+    .team-section {
+        padding: 40px 10%;
+        background-color: #f1f1f1;
+    }
+
+    .team-section h2 {
+        font-size: 30px;
+        color: #333;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .team-members {
+        display: flex;
+        flex-direction: column; /* Vertical alignment */
+        align-items: center; /* Center the team members horizontally */
+        gap: 30px; /* Space between each member */
+    }
+
+    .team-member {
+        text-align: center;
+        width: 250px;
+    }
+
+    .team-member img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%; /* Circular Image */
+        object-fit: cover;
+        margin-bottom: 10px;
+        border: 3px solid #0078d7; /* Optional border */
+    }
+
+    .team-member h3 {
+        font-size: 20px;
+        color: #333;
+        margin-bottom: 5px;
+    }
+
+    .team-member p {
+        font-size: 16px;
+        color: #555;
+        margin: 0;
+    }
+
+
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <!-- <header>
+        <h1>About Us</h1>
+        <p>Your trusted travel companion</p>
+    </header> -->
+    <header>
+        <div class="logo">
+            <span class="icon">✈️</span>
+            <h1>Trip Buddy</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="index.html">Plans</a></li>
+                <li><a href="Guide.html">Guide</a></li>
+                <li><a href="Aboutus.html">About</a></li>
+                <li><a href="Login.html">Login</a></li>
+            </ul>
+        </nav>
+        <div class="profile">
+            <img src="https://png.pngtree.com/png-vector/20191110/ourmid/pngtree-avatar-icon-profile-icon-member-login-vector-isolated-png-image_1978396.jpg" alt="Profile" class="profile-icon">
+            <!-- <span class="username">John Doe</span> -->
+            <div class="dropdown">
+                <ul>
+                    <li><a href="profile.html">View Profile</a></li>
+                    <li><a href="settings.html">Settings</a></li>
+                    <li><a href="Home.html">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <h2>Welcome to Trip Buddy</h2>
+        <p>
+            Trip Buddy is your ultimate travel companion, designed to make your journeys memorable, enjoyable, and stress-free. 
+            From exploring hidden gems to experiencing world-renowned landmarks, we provide you with the most comprehensive 
+            travel guides and personalized recommendations to make your trips extraordinary.
+        </p>
+        <p>
+            Whether you're a solo traveler, planning a family vacation, or a group adventure, Trip Buddy is here to guide you 
+            every step of the way. With our platform, you can discover top destinations, learn about their history and culture, 
+            and create unforgettable memories.
+        </p>
+    </section>
+
+    <section class="team-section">
+        <h2>Meet Our Team</h2>
+        <div class="team-members">
+            <!-- Team Member 1 -->
+            <div class="team-member">
+                <img src="DP.jpg" alt="DevPriya Gupta">
+                <h3>DevPriya Gupta</h3>
+                <p>Founder & CEO</p>
+            </div>
+            <!-- Team Member 2 -->
+            <div class="team-member">
+                <img src="DE.jpg" alt="Devansh Singh">
+                <h3>Devansh Singh</h3>
+                <p>Travel Expert</p>
+            </div>
+            <!-- Team Member 3 -->
+            <div class="team-member">
+                <img src="Cg.jpg" alt="Chavi Garg">
+                <h3>Chavi Garg</h3>
+                <p>Content Strategist</p>
+            </div>
+            <!-- Team Member 4 -->
+            <div class="team-member">
+                <img src="me2.jpg" alt="Bhoomi Verma">
+                <h3>Bhoomi Verma</h3>
+                <p>Technical Lead</p>
+            </div>
+        </div>
+    </section>
+    
+
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Travel Planner. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

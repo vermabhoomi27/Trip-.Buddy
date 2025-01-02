@@ -1,0 +1,713 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Travel Planner</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* header {
+    background-color: #333;
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+nav ul li a.active {
+    font-weight: bold;
+} */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1px 1px;
+    background-color: #1E90FF;
+    color: white;
+    padding: 0 20px;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+    font-family: 'Georgia', serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+    padding: 1px 1px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #FFD700, #FF6347);/* Gold to Tomato gradient */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+header .logo .icon {
+    font-size: 3rem;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+/* Add a hover effect for the logo */
+header .logo:hover {
+    transform: scale(1.05);
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+header .logo:hover .icon {
+    transform: rotate(15deg); /* Rotate the icon slightly */
+}
+
+header .logo h1 {
+    font-size: 2rem;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 15px;
+    padding: 1px 1px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #FFD700;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.profile-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.username {
+    font-size: 1rem;
+    font-weight: bold;
+}
+.dropdown {
+    display: none; /* Initially hidden */
+    position: absolute;
+    top: 45px;
+    right: 0;
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 150px;
+}
+
+.dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown ul li {
+    border-bottom: 1px solid #ddd;
+}
+
+.dropdown ul li:last-child {
+    border-bottom: none;
+}
+
+.dropdown ul li a {
+    display: block;
+    padding: 10px;
+    color: black;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown ul li a:hover {
+    background-color: #f0f0f0;
+}
+
+/* Show dropdown when profile is hovered */
+.profile:hover .dropdown {
+    display: block;
+}
+
+
+ .hero{
+    text-align: center;
+    font-size: 2.4rem;
+    font-style: oblique;
+}
+
+main {
+    padding: 2rem;
+}
+
+.contact-us {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-us h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.contact-us p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.contact-details {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.contact-info {
+    width: 30%;
+}
+
+.contact-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact-info p {
+    font-size: 1rem;
+}
+
+.contact-form {
+    margin-top: 2rem;
+}
+
+.contact-form h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.contact-form button {
+    background-color: #333;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #555;
+}
+
+/* footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+} */
+footer {
+    text-align: center;
+    padding: 1px 1px;
+    background-color: #1E90FF;
+    color: white;
+    margin-top: 40px;
+}
+
+</style>
+<body>
+    <!-- <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html" class="active">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header> 
+    <header>
+        <div class="logo">
+            <span class="icon">✈️</span>
+            <h1>Trip Buddy</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="index.html">Plans</a></li>
+                <li><a href="Guide.html">Guide</a></li>
+                <li><a href="Aboutus.html">About</a></li>
+                <li><a href="Login.html">Login</a></li>
+            </ul>
+        </nav>
+        <div class="profile">
+            <img src="https://png.pngtree.com/png-vector/20191110/ourmid/pngtree-avatar-icon-profile-icon-member-login-vector-isolated-png-image_1978396.jpg" alt="Profile" class="profile-icon">
+            <!-- <span class="username">John Doe</span> 
+            <div class="dropdown">
+                <ul>
+                    <li><a href="profile.html">View Profile</a></li>
+                    <li><a href="settings.html">Settings</a></li>
+                    <li><a href="#">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="contact-us">
+            <h1>Contact Us</h1>
+            <p>If you have any questions or need assistance with planning your trip, feel free to reach out to us!</p>
+
+            <div class="contact-details">
+                <div class="contact-info">
+                    <h3>Our Office</h3>
+                    <p>123 Travel St, Suite 101<br>DreamCity, World</p>
+                </div>
+
+                <div class="contact-info">
+                    <h3>Email</h3>
+                    <p><a href="mailto:info@travelplanner.com">info@travelplanner.com</a></p>
+                </div>
+
+                <div class="contact-info">
+                    <h3>Phone</h3>
+                    <p><a href="tel:+1234567890">+1 (234) 567-890</a></p>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <h3>Send Us a Message</h3>
+                <form action="submit_form.php" method="POST">
+                    <label for="name">Your Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Your Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="message">Your Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Travel Planner. All rights reserved.</p>
+    </footer>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Travel Planner</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+</head>
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #1E90FF;
+    color: white;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+    font-family: 'Georgia', serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+    padding: 1px 1px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #FFD700, #FF6347);/* Gold to Tomato gradient */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* header .logo .icon {
+    font-size: 3rem;
+    margin-right: 10px;
+} */
+header .logo .icon {
+    font-size: 3rem;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+header .logo:hover .icon {
+    transform: rotate(15deg); /* Rotate the icon slightly */
+}
+
+header .logo h1 {
+    font-size: 2rem;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #FFD700;
+}
+
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+}
+
+.profile-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.username {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 45px;
+    right: 0;
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 150px;
+}
+
+.dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown ul li {
+    border-bottom: 1px solid #ddd;
+}
+
+.dropdown ul li:last-child {
+    border-bottom: none;
+}
+
+.dropdown ul li a {
+    display: block;
+    padding: 10px;
+    color: black;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown ul li a:hover {
+    background-color: #f0f0f0;
+}
+
+.profile:hover .dropdown {
+    display: block;
+}
+
+main {
+    padding: 2rem;
+}
+
+.contact-us {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-us h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.contact-us p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.contact-details {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.contact-info {
+    width: 30%;
+    margin-bottom: 1rem;
+}
+
+.contact-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact-info p {
+    font-size: 1rem;
+}
+
+.contact-form {
+    margin-top: 2rem;
+}
+
+.contact-form h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.contact-form button {
+    background-color: #333;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #555;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #1E90FF;
+    color: white;
+    margin-top: 40px;
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+    nav ul {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .contact-details {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-info {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* When the menu is active */
+.nav-active {
+    display: flex;
+}
+
+</style>
+<body>
+    <header>
+        <div class="logo">
+            <span class="icon">✈️</span>
+            <h1>Trip Buddy</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="index.html">Plans</a></li>
+                <li><a href="Guide.html">Guide</a></li>
+                <li><a href="Aboutus.html">About</a></li>
+                <li><a href="Login.html">Login</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">&#9776;</div>
+        </nav>
+        <div class="profile">
+            <img src="https://png.pngtree.com/png-vector/20191110/ourmid/pngtree-avatar-icon-profile-icon-member-login-vector-isolated-png-image_1978396.jpg" alt="Profile" class="profile-icon">
+            <!-- <span class="username">John Doe</span> -->
+            <div class="dropdown">
+                <ul>
+                    <li><a href="profile.html">View Profile</a></li>
+                    <li><a href="settings.html">Settings</a></li>
+                    <li><a href="Home.html">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="contact-us">
+            <h1>Contact Us</h1>
+            <p>If you have any questions or need assistance with planning your trip, feel free to reach out to us!</p>
+
+            <div class="contact-details">
+                <div class="contact-info">
+                    <h3>Our Office</h3>
+                    <p>123 Travel St, Suite 101<br>DreamCity, World</p>
+                </div>
+
+                <div class="contact-info">
+                    <h3>Email</h3>
+                    <p><a href="mailto:info@travelplanner.com">info@travelplanner.com</a></p>
+                </div>
+
+                <div class="contact-info">
+                    <h3>Phone</h3>
+                    <p><a href="tel:+1234567890">+1 (234) 567-890</a></p>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <h3>Send Us a Message</h3>
+                <form action="submit_form.php" method="POST">
+                    <label for="name">Your Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Your Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="message">Your Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Travel Planner. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // script.js
+document.getElementById('hamburger').addEventListener('click', function() {
+    const navList = document.getElementById('nav-list');
+    navList.classList.toggle('nav-active');
+});
+
+    </script>
+</body>
+</html>

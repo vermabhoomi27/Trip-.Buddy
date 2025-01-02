@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Guide Book - Trip Buddy</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-image: url("https://imgs.search.brave.com/5bWCP07RAFaRxyr-yaYj2D9-VB9SxR1FApdNo2xpVAA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTQw/NDYyMzUxL3Bob3Rv/L3JvYWQtbWFwcy5q/cGc_cz02MTJ4NjEy/Jnc9MCZrPTIwJmM9/dWRIU05jNi1BWVhR/MWR5N2lZa0pRTUtt/dDZibkd1ckwyQV90/NDRTQzZ1WT0");
+        }
+        /* header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        } */
+        header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1px 1px;
+    background-color: #1E90FF;
+    color: white;
+    padding: 0 20px;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+    font-family: 'Georgia', serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+    padding: 1px 1px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #FFD700, #FF6347);/* Gold to Tomato gradient */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+header .logo .icon {
+    font-size: 3rem;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+/* Add a hover effect for the logo */
+header .logo:hover {
+    transform: scale(1.05);
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+header .logo:hover .icon {
+    transform: rotate(15deg); /* Rotate the icon slightly */
+}
+
+header .logo h1 {
+    font-size: 2rem;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 15px;
+    padding: 1px 1px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #FFD700;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.profile-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.username {
+    font-size: 1rem;
+    font-weight: bold;
+}
+.dropdown {
+    display: none; /* Initially hidden */
+    position: absolute;
+    top: 45px;
+    right: 0;
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 150px;
+}
+
+.dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown ul li {
+    border-bottom: 1px solid #ddd;
+}
+
+.dropdown ul li:last-child {
+    border-bottom: none;
+}
+
+.dropdown ul li a {
+    display: block;
+    padding: 10px;
+    color: black;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown ul li a:hover {
+    background-color: #f0f0f0;
+}
+
+/* Show dropdown when profile is hovered */
+.profile:hover .dropdown {
+    display: block;
+}
+
+        section {
+            padding: 40px 20px;
+            margin: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #4CAF50;
+        }
+        .team-members {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .team-member {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            margin: 15px;
+            width: 250px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .team-member img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .team-member h3 {
+            color: #4CAF50;
+            margin: 10px 0;
+        }
+        .team-member p {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 20px;
+        }
+        .cta {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 18px;
+            border-radius: 8px;
+            margin-top: 30px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .cta:hover {
+            background-color: #45a049;
+        }
+        /* footer {
+            background-color: #45a049;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        } */
+        footer {
+    text-align: center;
+    padding: 1px 1px;
+    background-color: #1E90FF;
+    color: white;
+    margin-top: 40px;
+}
+    </style>
+</head>
+<body>
+
+    <!-- <header>
+        <h1>Guide Book</h1>
+    </header> -->
+    <header>
+        <div class="logo">
+            <span class="icon">✈️</span>
+            <h1>Trip Buddy</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="index.html">Plans</a></li>
+                <li><a href="Guide.html">Guide</a></li>
+                <li><a href="Aboutus.html">About</a></li>
+                <li><a href="Login.html">Login</a></li>
+            </ul>
+        </nav>
+        <div class="profile">
+            <img src="https://png.pngtree.com/png-vector/20191110/ourmid/pngtree-avatar-icon-profile-icon-member-login-vector-isolated-png-image_1978396.jpg" alt="Profile" class="profile-icon">
+            <!-- <span class="username">John Doe</span> -->
+            <div class="dropdown">
+                <ul>
+                    <li><a href="profile.html">View Profile</a></li>
+                    <li><a href="settings.html">Settings</a></li>
+                    <li><a href="Home.html">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    
+    <section id="STATES">
+        <h2>DELHI</h2>
+        <div class="team-members">
+            <!-- Team Member 1 -->
+            <div class="team-member">
+                <img src="https://imgs.search.brave.com/5u-ZqN0WDq1o5rsDixzmcwFkaLQfOJgnHpkII6EOZGo/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTgy/OTU5NTYwL3Bob3Rv/L2luc2lkZS1yZWQt/Zm9ydC5qcGc_cz02/MTJ4NjEyJnc9MCZr/PTIwJmM9bkJieG94/MVJoTFRyamh1a1dX/MUR3MlFaX1JEY1R1/d1NYSlFaRFJRclFy/ST0" alt="Red Fort">
+                <h3><a href="https://en.wikipedia.org/wiki/Red_Fort" target="_blank">Red Fort</a></h3>
+                <p>The Red Fort, also known as Lal Qila, is a historic fort in Delhi, India, that historically served as the main residence of the Mughal emperors. Emperor Shah Jahan commissioned the construction of the Red Fort on 12 May 1639, when he decided to shift his capital from Agra to Delhi.</p>
+            </div>
+    
+            <!-- Team Member 2 -->
+            <div class="team-member">
+                <img src="https://imgs.search.brave.com/IloBqMB4pGiN4P444CqO6ZVK1C7sO_7ciTe8tafBsR0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zMy5p/bmRpYS5jb20vdHJh/dmVsL3dwLWNvbnRl/bnQvdXBsb2Fkcy8y/MDE2LzAzL0xvdHVz/LXRlbXBsZS1tYWlu/LmpwZw" alt="Lotus Temple">
+                <h3><a href="https://en.wikipedia.org/wiki/Lotus_Temple" target="_blank">Lotus Temple</a></h3>
+                <p>The Lotus Temple is a Baháʼí House of Worship located in New Delhi, India. It was completed in December 1986. Notable for its lotus-like shape, it has become a prominent attraction in the city. Like all Bahá’í Houses of Worship, the Lotus Temple is open to all, regardless of religion or any other qualification.</p>
+            </div>
+    
+            <!-- Team Member 3 -->
+            <div class="team-member">
+                <img src="https://imgs.search.brave.com/dloeqfxDywHdZKpiY-WdFBK4EyYyHm3AtVKwvQevIEc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvNTA2/ODEyNjQxL3Bob3Rv/L2luZGlhLWdhdGUu/anBnP3M9NjEyeDYx/MiZ3PTAmaz0yMCZj/PTNaeEpnUUFjRTZV/V3E2emY5T05kZnBE/cHdDeU45aUo1dkRM/RVFOYVZGUm89" alt="India Gate">
+                <h3><a href="https://en.wikipedia.org/wiki/India_Gate" target="_blank">India Gate</a></h3>
+                <p>The India Gate (formerly known as All India War Memorial) is a war memorial located near the Rajpath (officially called Kartavya Path) on the eastern edge of the "ceremonial axis" of New Delhi. It stands as a memorial to 74,187 soldiers of the Indian Army who died between 1914 and 1921 in the First World War.</p>
+            </div>
+    
+            <!-- Team Member 4 -->
+            <div class="team-member">
+                <img src="https://imgs.search.brave.com/ucioC3V8wKeIwvybnXwETuN9h8496QTmAjryYrLWfBg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTE2/MDk3NTA1OS9waG90/by9xdXR1Yi1taW5h/ci1hbmQtaXRzLW1v/bnVtZW50cy1kZWxo/aS5qcGc_cz02MTJ4/NjEyJnc9MCZrPTIw/JmM9bkNRcG1WWXNm/RllwTWc4aS02a1Fr/dUhmUTlQLTVJWEd4/eUFEVkl0aURfaz0" alt="Qutub Minar">
+                <h3><a href="https://en.wikipedia.org/wiki/Qutb_Minar" target="_blank">Qutub Minar</a></h3>
+                <p>The Qutb Minar, also spelled Qutub Minar and Qutab Minar, is a minaret and "victory tower" that forms part of the Qutb complex, which lies at the site of Delhi's oldest fortified city, Lal Kot, founded by the Tomar Rajputs. It is a UNESCO World Heritage Site in the Mehrauli area of South Delhi, India.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="STATES">
+        <h2>RAJASTHAN</h2>
+        <div class="team-members">
+            <!-- Team Member 1 -->
+            <div class="team-member">
+                <img src="https://imgs.search.brave.com/ZWurGj83eHqtZ4_OU1a3M-8xijuhPGEqAHpM-9Sudiw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9oYmxp/bWcubW10Y2RuLmNv/bS9jb250ZW50L2h1/YmJsZS9pbWcvamFp/cHVyL21tdC9hY3Rp/dml0aWVzL21fYWN0/aXZpdGllc19oYXdh/X21haGFsXzJfbF8z/MjFfNDk4LmpwZw" alt="Hawa Mahal">
+                <h3><a href="https://en.wikipedia.org/wiki/Hawa_Mahal" target="_blank">Hawa Mahal</a></h3>
+                <p>The Hawa Mahal, also known as the "Palace of Winds," is located in Jaipur, Rajasthan. It is a five-story palace made of pink sandstone, built in 1799 by Maharaja Sawai Pratap Singh to allow royal women to observe street festivals without being seen.</p>
+            </div>
+            
+            <!-- Team Member 2 -->
+            <div class="team-member">
+                <img src="https://imgs.search.brave.com/6gCy12ZtWesEmeIXWWnoLciBopQDtCnisJM0bEWeiSU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YTEudGhyaWxsb3Bo/aWxpYS5jb20vZmls/ZXN0b3JlL2g5b2M4/ZnEwY2ZoOWxoamEz/b29tdTNrandwaGpf/MTU3NDMzNTM0MF9z/aHV0dGVyc3RvY2tf/NzQxNzY2Njg3Lmpw/Zz93PTE0NDAmZHBy/PTI" alt="Amer Fort">
+                <h3><a href="https://en.wikipedia.org/wiki/Amer_Fort" target="_blank">Amer Fort</a></h3>
+                <p>Amer Fort is a magnificent fort located in Amer, Rajasthan, near Jaipur. Built in 1592 by Raja Man Singh, the fort is known for its artistic Hindu-style architecture, with large ramparts, cobbled paths, and beautiful views of Maota Lake.</p>
+            </div>
+    
+            <!-- Team Member 3 -->
+            <div class="team-member">
+                <img src="https://imgs.search.brave.com/YMMmZX750IdymhcbJcIQqhA2zSYYECvX_auKTWbkHMA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvOTg1/NzE4MjAwL3Bob3Rv/L2NpdHktcGFsYWNl/LXVkYWlwdXIuanBn/P3M9NjEyeDYxMiZ3/PTAmaz0yMCZjPXNS/d0FaOWdKd1FHd0R2/NG44VmxhUG9HN3U2/a1lqbERoQmQtRElt/OU1yZms9" alt="Udaipur City Palace">
+                <h3><a href="https://en.wikipedia.org/wiki/Udaipur_City_Palace" target="_blank">Udaipur City Palace</a></h3>
+                <p>The Udaipur City Palace is located on the eastern bank of Lake Pichola in Udaipur, Rajasthan. Built over 400 years starting in 1559, this palace complex is famous for its beautiful architecture, sprawling gardens, and stunning views of the lake.</p>
+            </div>
+    
+            <!-- Team Member 4 -->
+            <div class="team-member">
+                <img src="https://imgs.search.brave.com/6NlnB6g1UqiR32ZsvT-U335fWTvrgyXxQRYolmNKvJg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvOTMx/Mzc3Mzg4L3Bob3Rv/L2phaXNhbG1lci1m/b3J0LmpwZz9zPTYx/Mng2MTImdz0wJms9/MjAmYz02RnhUem9m/aGVwUURlMXE2UnJf/Q2s3QzgwU3AyVkRz/X1JBaG5fMzZPSlQ0/PQ" alt="Jaisalmer Fort">
+                <h3><a href="https://en.wikipedia.org/wiki/Jaisalmer_Fort" target="_blank">Jaisalmer Fort</a></h3>
+                <p>Jaisalmer Fort, also known as "Sonar Quila" or the "Golden Fort," is located in Jaisalmer, Rajasthan. Built in 1156 AD by the Rajput ruler Rawal Jaisal, the fort is a UNESCO World Heritage Site and is one of the largest forts in the world.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="STATES">
+        <h2>MAHARASHTRA</h2>
+        <div class="team-members">
+            <!-- Team Member 1 -->
+            <div class="team-member">
+                <img src="https://imgs.search.brave.com/h5q82IxrO75KFnib3B-wpx3hift5xqA3uY1LksXqp0o/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzA5LzU5LzI2LzQ5/LzM2MF9GXzk1OTI2/NDk0NF9zOG5XNE12/M3dFSGhGdHFtUHUw/MTZIZjJCMjJzZVVs/My5qcGc" alt="Gateway of India">
+                <h3><a href="https://en.wikipedia.org/wiki/Gateway_of_India" target="_blank">Gateway of India</a></h3>
+                <p>The Gateway of India is an iconic monument located in Mumbai, Maharashtra. Built in 1924, it was erected to commemorate the arrival of King George V and Queen Mary to India. It is a popular tourist spot and a symbol of Mumbai's heritage.</p>
+            </div>
+            
+            <!-- Team Member 2 -->
+            <div class="team-member">
+                <img src="https://imgs.search.brave.com/FJPutuGcNPbxe8cpTgNeo0cEXT9wUKxzdtCYEHFR7s4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvNjUw/MDcxMTE0L3Bob3Rv/L2FqYW50YS1jYXZl/cy5qcGc_cz02MTJ4/NjEyJnc9MCZrPTIw/JmM9dnV5NkpkdDRN/SG84R0JGa21oTWZo/U0t3MXdJTkE5M0Va/SlViekVCV1RHcz0" alt="Ajanta Caves">
+                <h3><a href="https://en.wikipedia.org/wiki/Ajanta_Caves" target="_blank">Ajanta Caves</a></h3>
+                <p>The Ajanta Caves, located in Aurangabad, Maharashtra, are a series of 29 rock-cut caves dating back to the 2nd century BCE. These caves are renowned for their stunning Buddhist paintings and sculptures and are a UNESCO World Heritage Site.</p>
+            </div>
+    
+            <!-- Team Member 3 -->
+            <div class="team-member">
+                <img src="https://imgs.search.brave.com/OMDa2qb2YgoGkwfhQHEZzBZVkWQYxdDTAVLWExyBFyQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWdj/bGQueWF0cmEuY29t/L3l0aW1hZ2VzL2lt/YWdlL3VwbG9hZC90/X21vYmlsZWRldGFp/bHNpbWcvdjE1MTQ2/NDE0NTkvTW9udW1l/bnRzL0VsZXBoYW50/YUNhdmVzL2VhNGZm/ZDc5LTk4Y2QtNDMz/My05ZjAyLWM5NmJm/Y2U4ZGMxNi8xX253/bWxwTS5qcGc" alt="Elephanta Caves">
+                <h3><a href="https://en.wikipedia.org/wiki/Elephanta_Caves" target="_blank">Elephanta Caves</a></h3>
+                <p>The Elephanta Caves, located on Elephanta Island near Mumbai, are a collection of ancient rock-cut temples. Dating back to the 5th to 8th centuries, these caves are dedicated to Lord Shiva and are a UNESCO World Heritage Site.</p>
+            </div>
+    
+            <!-- Team Member 4 -->
+            <div class="team-member">
+                <img src="https://imgs.search.brave.com/lXyqcAP88ssc2wi7W2XkEj3HNT1kj-j0UZlL2v3sATY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZTMubW91dGhzaHV0/LmNvbS9pbWFnZXMv/aW1hZ2VzcC85MjU3/NDAzOTJzLmpwZw" alt="Shaniwar Wada">
+                <h3><a href="https://en.wikipedia.org/wiki/Shaniwar_Wada" target="_blank">Shaniwar Wada</a></h3>
+                <p>Shaniwar Wada is a historic fortification in Pune, Maharashtra. Built in 1732 by the Peshwas of the Maratha Empire, it is known for its rich history and architecture, with intricate carvings and sprawling gardens.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="STATES">
+        <h2>TAMIL NADU</h2>
+        <div class="team-members">
+            <!-- Team Member 1 -->
+            <div class="team-member">
+                <img src="https://imgs.search.brave.com/DN-rvcKk8A0WG2O0dIRpDwQok9j_vFTv1GYa_h6M6nE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzAzLzA3LzQ1Lzg3/LzM2MF9GXzMwNzQ1/ODcxMl9MN0RreDVJ/WVVZd2NSQXc3b1Nk/NVREamNhRXRoZHlm/by5qcGc" alt="Meenakshi Temple">
+                <h3><a href="https://en.wikipedia.org/wiki/Meenakshi_Temple" target="_blank">Meenakshi Temple</a></h3>
+                <p>The Meenakshi Temple, located in Madurai, Tamil Nadu, is one of the most famous Hindu temples in India. Dedicated to Goddess Meenakshi and Lord Sundareswarar, it is known for its stunning architecture and colorful sculptures.</p>
+            </div>
+            
+            <!-- Team Member 2 -->
+            <div class="team-member">
+                <img src="https://imgs.search.brave.com/J5OYwWKf2w_hsrweAkXlVvNfiNc9rPZ6-nV6uLUtmsI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/dGFtaWxuYWR1dG91/cmlzbS50bi5nb3Yu/aW4vaW1nL3BhZ2Vz/L21vYmlsZS9tYWhh/YmFsaXB1cmFtLTE2/NTUzMjExMDJfZDU3/NzE0MDFhZTBkNDJi/ZWE2ZmIud2VicA" alt="Mahabalipuram">
+                <h3><a href="https://en.wikipedia.org/wiki/Mahabalipuram" target="_blank">Mahabalipuram</a></h3>
+                <p>Mahabalipuram, also known as Mamallapuram, is a UNESCO World Heritage Site located on the Coromandel Coast. It is famous for its ancient rock-cut temples, monuments, and the Shore Temple.</p>
+            </div>
+    
+            <!-- Team Member 3 -->
+            <div class="team-member">
+                <img src="https://imgs.search.brave.com/L-vANv0orcrn_QW6bYmxjWSkv2CSSTX-FkB6-GCS4S4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/dGFtaWxuYWR1dG91/cmlzbS50bi5nb3Yu/aW4vaW1nL3BhZ2Vz/L2xhcmdlLWRlc2t0/b3AvYnJpaGFkZWVz/d2FyYS10ZW1wbGUt/MTY1NDU5MTQzM181/ZTE4YjhjNzA1NDg1/OWFhYjM5NC53ZWJw" alt="Brihadeeswarar Temple">
+                <h3><a href="https://en.wikipedia.org/wiki/Brihadeeswarar_Temple" target="_blank">Brihadeeswarar Temple</a></h3>
+                <p>The Brihadeeswarar Temple, located in Thanjavur, Tamil Nadu, is one of the largest temples in India. Built by Raja Raja Chola I in the 11th century, it is a UNESCO World Heritage Site and an example of Dravidian architecture.</p>
+            </div>
+    
+            <!-- Team Member 4 -->
+            <div class="team-member">
+                <img src="https://imgs.search.brave.com/WYgEgKQGRJwsBdO9FxoD2eYx-l7JB6SmbDsgl8t4t20/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/dGFtaWxuYWR1dG91/cmlzbS50bi5nb3Yu/aW4vaW1nL3BhZ2Vz/L2xhcmdlLWRlc2t0/b3Avb290eS0xNjU1/NDU3NDI0X2JjYTgw/ZjgxZTgzOTFlYmRh/YWNhLndlYnA" alt="Ooty">
+                <h3><a href="https://en.wikipedia.org/wiki/Udhagamandalam" target="_blank">Ooty</a></h3>
+                <p>Ooty, officially known as Udhagamandalam, is a hill station in Tamil Nadu. It is famous for its scenic landscapes, tea gardens, and pleasant weather, making it a popular summer destination.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="STATES">
+        <h2>UTTARAKHAND</h2>
+        <div class="team-members">
+            <!-- Team Member 1 -->
+            <div class="team-member">
+                <img src="https://imgs.search.brave.com/gzz0TrJ7_mPBbxdX6CWSiSTYpQZ8dtkXnDyr_m3-phc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy81/LzU2L0tlZGFybmF0/aF9UZW1wbGVfaW5f/UmFpbnlfc2Vhc29u/LmpwZw" alt="Kedarnath Temple">
+                <h3><a href="https://en.wikipedia.org/wiki/Kedarnath_Temple" target="_blank">Kedarnath Temple</a></h3>
+                <p>Kedarnath Temple, located in the Garhwal Himalayas of Uttarakhand, is dedicated to Lord Shiva. It is one of the Char Dham pilgrimage sites and one of the twelve Jyotirlingas of India.</p>
+            </div>
+            
+            <!-- Team Member 2 -->
+            <div class="team-member">
+                <img src="https://imgs.search.brave.com/FbFfJJrJu3GXu5iqWtwqLPEZzrJqVmUHQXjfmebhrTg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/Y2hhc2luZ3RoZXVu/ZXhwZWN0ZWQuY29t/L3dwLWNvbnRlbnQv/dXBsb2Fkcy8yMDEx/LzA2L25haW5pdGFs/LWxha2UxLmpwZw" alt="Nainital Lake">
+                <h3><a href="https://en.wikipedia.org/wiki/Nainital" target="_blank">Nainital Lake</a></h3>
+                <p>Nainital Lake, located in the hill station of Nainital, Uttarakhand, is a famous natural lake shaped like a crescent. It is surrounded by picturesque hills and is a major tourist attraction.</p>
+            </div>
+    
+            <!-- Team Member 3 -->
+            <div class="team-member">
+                <img src="https://imgs.search.brave.com/etQEdFlq1NVTmQY9FsmuJbj2c9zX4zDCtTy2cDa4Wv0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvODI1/MjY4MzUwL3Bob3Rv/L2hhcmRpd2FyLmpw/Zz9zPTYxMng2MTIm/dz0wJms9MjAmYz1l/Q1F0LU4tMi13Vm1f/aW1mTkZ0UnlPUGRz/OC1OVkx1b3hUa0hR/OE4wRVNnPQ" alt="Haridwar">
+                <h3><a href="https://en.wikipedia.org/wiki/Haridwar" target="_blank">Haridwar</a></h3>
+                <p>Haridwar is a sacred city in Uttarakhand, known for its ghats along the Ganges River. It is a major Hindu pilgrimage site, where the famous Ganga Aarti takes place every evening.</p>
+            </div>
+    
+            <!-- Team Member 4 -->
+            <div class="team-member">
+                <img src="https://imgs.search.brave.com/NJIwsrCu4Naa-aUYqGjocgcqtT5FUz1xvWcHt4luvO8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTQz/NjAyNTYwL3Bob3Rv/L3ZhbGxleS1vZi1m/bG93ZXJzLmpwZz9z/PTYxMng2MTImdz0w/Jms9MjAmYz1WTU9y/b3BldzgwenZ4eWRo/NnU0WkVzWXd0V3dG/SVF3dTdkRVF4YW1p/VmRVPQ" alt="Valley of Flowers">
+                <h3><a href="https://en.wikipedia.org/wiki/Valley_of_Flowers" target="_blank">Valley of Flowers</a></h3>
+                <p>The Valley of Flowers is a UNESCO World Heritage Site located in Uttarakhand. It is known for its vibrant alpine flowers and stunning landscapes, attracting nature lovers and trekkers.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="STATES">
+        <h2>JAMMU & KASHMIR</h2>
+        <div class="team-members">
+            <!-- Team Member 1 -->
+            <div class="team-member">
+                <img src="https://imgs.search.brave.com/Z2UxtqXNmxyhfXnI5XQF3YwLJvHwGM0GrH31cElSBJY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9scC1j/bXMtcHJvZHVjdGlv/bi5pbWdpeC5uZXQv/MjAxOS0wNi8zODRl/MTBmMzllYmM2ZmFi/OWI5OTE0Njc1NDFj/ZThlZC1kYWwtbGFr/ZS5qcGc_dz0xOTIw/Jmg9NjQwJmZpdD1j/cm9wJmNyb3A9ZmFj/ZXMsZWRnZXMmYXV0/bz1mb3JtYXQmcT03/NQ" alt="Dal Lake">
+                <h3><a href="https://en.wikipedia.org/wiki/Dal_Lake" target="_blank">Dal Lake</a></h3>
+                <p>Dal Lake, located in Srinagar, Jammu & Kashmir, is famous for its houseboats and shikaras. The lake is a major tourist attraction and is surrounded by gardens and the majestic Himalayan mountains.</p>
+            </div>
+    
+            <!-- Team Member 2 -->
+            <div class="team-member">
+                <img src="https://imgs.search.brave.com/roOLJXHDINUarhCdN1-Ob8ZFyDQq2EEwF9piQPFwCPE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzA1LzEzLzEzLzk2/LzM2MF9GXzUxMzEz/OTY5NV9vRGVveDlT/emt4NW9WdmIyRnE1/RzJaeHZSSUx4TTly/by5qcGc" alt="Gulmarg">
+                <h3><a href="https://en.wikipedia.org/wiki/Gulmarg" target="_blank">Gulmarg</a></h3>
+                <p>Gulmarg, located in Jammu & Kashmir, is known for its skiing resorts and the Gulmarg Gondola, one of the highest cable cars in the world. It is a popular hill station and skiing destination.</p>
+            </div>
+    
+            <!-- Team Member 3 -->
+            <div class="team-member">
+                <img src="https://imgs.search.brave.com/E4f494VMOgDx064XR7OvZFtHczKIN-u477Eb8XyTQW8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/a2FzaG1pcnRvdXJw/YWNrYWdlLm9yZy9i/bG9nL3dwLWNvbnRl/bnQvdXBsb2Fkcy8y/MDI0LzAxL1ZhaXNo/bm8tRGV2aS1UZW1w/bGUuanBn" alt="Vaishno Devi Temple">
+                <h3><a href="https://en.wikipedia.org/wiki/Vaishno_Devi" target="_blank">Vaishno Devi Temple</a></h3>
+                <p>The Vaishno Devi Temple, located in Katra, Jammu & Kashmir, is one of the most visited pilgrimage sites in India. The temple is dedicated to Goddess Vaishno Devi and attracts millions of devotees annually.</p>
+            </div>
+    
+            <!-- Team Member 4 -->
+            <div class="team-member">
+                <img src="https://imgs.search.brave.com/PsBlO4-As8J6ifL-6bE-gJ7rUhTF7cli57SVITYARbk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9oYmxp/bWcubW10Y2RuLmNv/bS9jb250ZW50L2h1/YmJsZS9pbWcvcGFo/YWxnYW0vbW10L2Rl/c3RpbmF0aW9uL21f/UGFoYWxnYW1fbF80/NzdfNzE0LmpwZw" alt="Pahalgam">
+                <h3><a href="https://en.wikipedia.org/wiki/Pahalgam" target="_blank">Pahalgam</a></h3>
+                <p>Pahalgam, located in Jammu & Kashmir, is known for its beautiful landscapes, trekking trails, and lush green valleys. It is a popular tourist destination and the starting point for the Amarnath Yatra pilgrimage.</p>
+            </div>
+        </div>
+    </section>
+    
+
+    <section id="STATES">
+        <h2>PUNJAB</h2>
+        <div class="team-members">
+            <!-- Team Member 1 -->
+            <div class="team-member">
+                <img src="https://imgs.search.brave.com/hjNV1iMElMCFvTmdozepdleepLWQr0etjobiHKQ_BWI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/Z2xvYmFsLWdhbGxp/dmFudGluZy5jb20v/d3AtY29udGVudC91/cGxvYWRzLzIwMTYv/MDgvSU1HXzIwMTYw/NzI4XzEyMjUwMC0x/MDI0eDg1Ni5qcGc" alt="Golden Temple">
+                <h3><a href="https://en.wikipedia.org/wiki/Golden_Temple" target="_blank">Golden Temple</a></h3>
+                <p>The Golden Temple, also known as Harmandir Sahib, is located in Amritsar, Punjab. It is the holiest site for Sikhs and is famous for its stunning architecture and the community kitchen that serves free meals to thousands daily.</p>
+            </div>
+    
+            <!-- Team Member 2 -->
+            <div class="team-member">
+                <img src="https://imgs.search.brave.com/Rb2KNteS6HX1uSRJ1mnTbQqpJnk04ML439tKpW-M8Ds/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9oYmxp/bWcubW10Y2RuLmNv/bS9jb250ZW50L2h1/YmJsZS9pbWcvYW1y/aXRzYXIvbW10L2Fj/dGl2aXRpZXMvbV9X/YWdhaCUyMEJvcmRl/cl8xX2xfNDAzXzUz/OC5qcGc" alt="Wagah Border">
+                <h3><a href="https://en.wikipedia.org/wiki/Wagah_border" target="_blank">Wagah Border</a></h3>
+                <p>Wagah Border, located near Amritsar, is a ceremonial border point between India and Pakistan. The daily flag-lowering ceremony is a major attraction, showcasing patriotism and unity.</p>
+            </div>
+    
+            <!-- Team Member 3 -->
+            <div class="team-member">
+                <img src="https://imgs.search.brave.com/3woS-P9NC7qq9OF2987UraiI38lfRPlG5C4XLv3oAwc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzA1LzMyLzY1LzIz/LzM2MF9GXzUzMjY1/MjMwOV9GYThBR2Zj/MUR6bjRYcHFSSkRl/QmtDaXRhbFY2VzhS/QS5qcGc" alt="Jallianwala Bagh">
+                <h3><a href="https://en.wikipedia.org/wiki/Jallianwala_Bagh" target="_blank">Jallianwala Bagh</a></h3>
+                <p>Jallianwala Bagh, situated in Amritsar, is a historic garden memorializing the tragic massacre of 1919. It stands as a reminder of India's struggle for independence.</p>
+            </div>
+    
+            <!-- Team Member 4 -->
+            <div class="team-member">
+                <img src="https://imgs.search.brave.com/VmWvR2u8WOmRU_vo5zaRKxXPevXiwNwgmpo_Lj_ZJNs/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy82/LzZkL1FpbGFfTXVi/YXJha19pbl9CYXRo/aW5kYS5qcGc" alt="Qila Mubarak">
+                <h3><a href="https://en.wikipedia.org/wiki/Qila_Mubarak" target="_blank">Qila Mubarak</a></h3>
+                <p>Qila Mubarak is a historic fortress in Patiala, Punjab. Built in the 18th century, it showcases a blend of Sikh and Mughal architecture and houses several museums and artifacts.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="STATES">
+        <h2>ASSAM</h2>
+        <div class="team-members">
+            <!-- Team Member 1 -->
+            <div class="team-member">
+                <img src="https://imgs.search.brave.com/lcc5T8V2zVlOVCdTxD6zAS18mch_bkuqGFZebTYXT68/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/c2F2YWFyaS5jb20v/YmxvZy93cC1jb250/ZW50L3VwbG9hZHMv/MjAyNC8wMS9VdHNh/dl9BcHAxLTEud2Vi/cA" alt="Kamakhya Temple">
+                <h3><a href="https://en.wikipedia.org/wiki/Kamakhya_Temple" target="_blank">Kamakhya Temple</a></h3>
+                <p>Kamakhya Temple, located in Guwahati, Assam, is one of the oldest and most revered Shakti temples in India. It is dedicated to Goddess Kamakhya and is a significant spiritual center.</p>
+            </div>
+    
+            <!-- Team Member 2 -->
+            <div class="team-member">
+                <img src="https://imgs.search.brave.com/K5hevO1RGSDzP-rch04pmt1C71S8aOatDJWJGUYYyHE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAzLzMzLzc3Lzgy/LzM2MF9GXzMzMzc3/ODIwMF9wM0ZnQ2xV/MUtpR3dLZ2xSak14/bnBFbE00MzJMOUc4/by5qcGc" alt="Kaziranga National Park">
+                <h3><a href="https://en.wikipedia.org/wiki/Kaziranga_National_Park" target="_blank">Kaziranga National Park</a></h3>
+                <p>Kaziranga National Park is a UNESCO World Heritage Site in Assam. It is renowned for its one-horned rhinoceroses, lush green landscapes, and diverse wildlife.</p>
+            </div>
+    
+            <!-- Team Member 3 -->
+            <div class="team-member">
+                <img src="https://imgs.search.brave.com/uoQqQbroDNV8Tgbr5_HjuXGpF3n8gJXKFI3_0MMZcJA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/dG91cm15aW5kaWEu/Y29tL3N0YXRlcy9h/c3NhbS9pbWFnZXMv/TWFqdWxpLUlzbGFu/ZC0xLmpwZw" alt="Majuli Island">
+                <h3><a href="https://en.wikipedia.org/wiki/Majuli" target="_blank">Majuli Island</a></h3>
+                <p>Majuli, the world's largest river island, is located in the Brahmaputra River in Assam. Known for its vibrant culture, scenic beauty, and ancient monasteries, it is a cultural hub of Assam.</p>
+            </div>
+    
+            <!-- Team Member 4 -->
+            <div class="team-member">
+                <img src="https://imgs.search.brave.com/eP-dr_CjPOsGkQVdZ-1cMWjYAPZM-dkeHxiQvWG1FYg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAzLzk1LzcwLzgy/LzM2MF9GXzM5NTcw/ODI1NF9XQUVyNmhB/bk1kMnhNNmdYb1c5/d3hsV1RaQVdiQnFn/WC5qcGc" alt="Sivasagar">
+                <h3><a href="https://en.wikipedia.org/wiki/Sivasagar" target="_blank">Sivasagar</a></h3>
+                <p>Sivasagar is a historic town in Assam, known for its Ahom-era monuments, including Rang Ghar, Talatal Ghar, and Sivasagar Lake, showcasing Assam's rich history.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="STATES">
+        <h2>MIZORAM</h2>
+        <div class="team-members">
+            <!-- Team Member 1 -->
+            <div class="team-member">
+                <img src="https://imgs.search.brave.com/e-YI0C4i5kDyAqfZH6tmA5Ur1wnf6cOERd-Aq9DvC5M/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy8x/LzFiL1BoYXduZ3B1/aV9uYXRpb25hbF9w/YXJrLmpwZw" alt="Phawngpui Peak">
+                <h3><a href="https://en.wikipedia.org/wiki/Phawngpui_Peak" target="_blank">Phawngpui Peak</a></h3>
+                <p>Phawngpui Peak, also known as the Blue Mountain, is the highest peak in Mizoram. It offers breathtaking views and is a haven for trekkers and nature enthusiasts.</p>
+            </div>
+    
+            <!-- Team Member 2 -->
+            <div class="team-member">
+                <img src="https://imgs.search.brave.com/vKUjCm8cmltmZTntz3qQMQ9THa9FikAxVUyWYjkiYzA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudG9paW1nLmNv/bS9waG90by9tc2lk/LTk0MTI5OTY0LHdp/ZHRoLTk2LGhlaWdo/dC02NS5jbXM" alt="Vangchhia">
+                <h3><a href="https://en.wikipedia.org/wiki/Vangchhia" target="_blank">Vangchhia</a></h3>
+                <p>Vangchhia is an archaeological site in Mizoram, featuring ancient megalithic structures and stone carvings, offering insights into the region's history and culture.</p>
+            </div>
+    
+            <!-- Team Member 3 -->
+            <div class="team-member">
+                <img src="https://imgs.search.brave.com/JvDPRHsG6CdhR3sxLc3PkEAOurwC42FHIP_syeOdgEk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbS53/aGF0c2hvdC5pbi9p/bWcvMjAyMC9KdW4v/cmVpLTE1OTIwMTc3/MDEuanBnP3c9NzQw/Jmg9Mzk3JnE9NjAm/d3A9MQ" alt="Reiek Tlang">
+                <h3><a href="https://en.wikipedia.org/wiki/Reiek" target="_blank">Reiek Tlang</a></h3>
+                <p>Reiek Tlang is a serene mountain near Aizawl, offering panoramic views of the surrounding valleys. It is a popular spot for hiking and picnics.</p>
+            </div>
+    
+            <!-- Team Member 4 -->
+            <div class="team-member">
+                <img src="https://imgs.search.brave.com/paAz8YXSA9E0zOvsbWMxnH0BcNs9Fgvv6ThcMRx723E/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudG9paW1nLmNv/bS9waG90by9tc2lk/LTY1MDI1NTQ4LHdp/ZHRoLTk2LGhlaWdo/dC02NS5jbXM" alt="Serchhip">
+                <h3><a href="https://en.wikipedia.org/wiki/Serchhip" target="_blank">Serchhip</a></h3>
+                <p>Serchhip is a picturesque town in Mizoram, home to Vantawng Falls, Mizoram's highest waterfall, and lush green landscapes that captivate visitors.</p>
+            </div>
+        </div>
+    </section>
+    
+
+    <section id="STATES">
+        <h2>WEST BENGAL</h2>
+        <div class="team-members">
+            <!-- Team Member 1 -->
+            <div class="team-member">
+                <img src="https://imgs.search.brave.com/Nysm4KP7sFqfsESqtOjUr7yMUejABP2HqK7gOeyCWio/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzA1LzAxLzM5LzA3/LzM2MF9GXzUwMTM5/MDc2OV9QVkhCNUJE/NlA0T3pUVjVkcktH/NXhnc1ZMcTI5cFI3/RS5qcGc" alt="Howrah Bridge">
+                <h3><a href="https://en.wikipedia.org/wiki/Howrah_Bridge" target="_blank">Howrah Bridge</a></h3>
+                <p>Howrah Bridge, an engineering marvel, is a cantilever bridge over the Hooghly River in Kolkata, West Bengal. It is an iconic symbol of the city and a busy landmark.</p>
+            </div>
+    
+            <!-- Team Member 2 -->
+            <div class="team-member">
+                <img src="https://imgs.search.brave.com/XK4OoqmTLIbUFWn8Q_H6vFNfNMI0_3CRb6VpTZhU3Ng/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/YXVkbGV5dHJhdmVs/LmNvbS83MDAvNTAw/Lzc5LzQwMTQ5LWhp/bWFsYXlhLWRhcmpl/ZWxpbmctaW5kaWEu/anBn" alt="Darjeeling">
+                <h3><a href="https://en.wikipedia.org/wiki/Darjeeling" target="_blank">Darjeeling</a></h3>
+                <p>Darjeeling, a charming hill station in West Bengal, is famous for its tea plantations, stunning views of the Himalayas, and the UNESCO-listed Darjeeling Himalayan Railway.</p>
+            </div>
+    
+            <!-- Team Member 3 -->
+            <div class="team-member">
+                <img src="https://imgs.search.brave.com/3Dwqb-EJHeFDVhvj_5V2NEcTviN2xubiwSVNdoSEBXE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy82/LzZiL1NhdmVfdGhl/X3N1bmRhcmJhbnNf/MjAuanBn" alt="Sundarbans">
+                <h3><a href="https://en.wikipedia.org/wiki/Sundarbans" target="_blank">Sundarbans</a></h3>
+                <p>The Sundarbans, a UNESCO World Heritage Site, is the world's largest mangrove forest and is home to the Bengal tiger. It is a unique ecosystem that attracts nature lovers.</p>
+            </div>
+    
+            <!-- Team Member 4 -->
+            <div class="team-member">
+                <img src="https://imgs.search.brave.com/qOfjdXMPgvgCBfAIM-06TBO75qdzJuE3Rbgy8x5wU4I/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTU3/NTg4NDEyL3Bob3Rv/L3ZpY3RvcmlhLW1l/bW9yaWFsLWluLWNh/bGN1dHRhLWluZGlh/LmpwZz9zPTYxMng2/MTImdz0wJms9MjAm/Yz03TUQ0Yy1CNkhz/aU9JeEJkMHZrQkc5/UFlxX0x4bmVsenJ6/TENoZy12RGlVPQ" alt="Victoria Memorial">
+                <h3><a href="https://en.wikipedia.org/wiki/Victoria_Memorial" target="_blank">Victoria Memorial</a></h3>
+                <p>Victoria Memorial is a stunning white marble building in Kolkata, dedicated to Queen Victoria. It houses a museum and is surrounded by lush gardens.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="STATES">
+        <h2>HARYANA</h2>
+        <div class="team-members">
+            <!-- Team Member 1 -->
+            <div class="team-member">
+                <img src="https://imgs.search.brave.com/1EXDWPgi4-rcPg-WQZAr2T0jK_fWM2MKURkr3uUyDNU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudG9paW1nLmNv/bS9waG90by81MDQ4/MTUyMi8uanBn" alt="Kurukshetra">
+                <h3><a href="https://en.wikipedia.org/wiki/Kurukshetra" target="_blank">Kurukshetra</a></h3>
+                <p>Kurukshetra, a historic town in Haryana, is known as the land of the Mahabharata. It houses several temples, museums, and the Brahma Sarovar, a sacred water tank.</p>
+            </div>
+    
+            <!-- Team Member 2 -->
+            <div class="team-member">
+                <img src="https://imgs.search.brave.com/YIg66I7ua2xkrn71Hz3Deul9-RMWqtKisbfKXcaiPnA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9oYmxp/bWcubW10Y2RuLmNv/bS9jb250ZW50L2h1/YmJsZS9pbWcvbWFu/ZXNhcmRlc3RpbWdz/L21tdC9hY3Rpdml0/aWVzL21fU3VsdGFu/cHVyX05hdGlvbmFs/X3BhcmtfMV9sXzQ4/MF82NDAuanBn" alt="Sultanpur National Park">
+                <h3><a href="https://en.wikipedia.org/wiki/Sultanpur_National_Park" target="_blank">Sultanpur National Park</a></h3>
+                <p>Sultanpur National Park, located near Gurugram, is a birdwatcher's paradise, with over 250 species of migratory and resident birds.</p>
+            </div>
+    
+            <!-- Team Member 3 -->
+            <div class="team-member">
+                <img src="https://imgs.search.brave.com/9n8hnSGXzhzKBOWmlROwfzocXTWFs8V-UjUOKn6N2Yk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9oYmxp/bWcubW10Y2RuLmNv/bS9jb250ZW50L2h1/YmJsZS9pbWcvcGFy/d2Fub28vbW10L2Fj/dGl2aXRpZXMvbV9Q/aW5qb3JlJTIwR2Fy/ZGVuLTJfbF80ODBf/NjQwLmpwZw" alt="Pinjore Gardens">
+                <h3><a href="https://en.wikipedia.org/wiki/Pinjore_Gardens" target="_blank">Pinjore Gardens</a></h3>
+                <p>Pinjore Gardens, also known as Yadavindra Gardens, is a 17th-century Mughal garden near Panchkula, offering a beautiful blend of history and nature.</p>
+            </div>
+    
+            <!-- Team Member 4 -->
+            <div class="team-member">
+                <img src="https://imgs.search.brave.com/fRE3xVkROJWKMjfXt7BZ0Mf-UzvCwCFGw3fK_tTok0I/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9oYmxp/bWcubW10Y2RuLmNv/bS9jb250ZW50L2h1/YmJsZS9pbWcvY2hh/bmRpZ2FyaC9tbXQv/YWN0aXZpdGllcy9t/X01vcm5pJTIwSGls/bHMtMl9sXzM0Ml81/MTQuanBn" alt="Morni Hills">
+                <h3><a href="https://en.wikipedia.org/wiki/Morni_Hills" target="_blank">Morni Hills</a></h3>
+                <p>Morni Hills, located near Chandigarh, is a serene hill station in Haryana. It is known for its scenic views, trekking trails, and adventure activities.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="STATES">
+        <h2>GOA</h2>
+        <div class="team-members">
+            <!-- Team Member 1 -->
+            <div class="team-member">
+                <img src="https://imgs.search.brave.com/fMTGz192CbR_hQ86K4pHd2edk0VOfD97caIixKmPAwk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/dG91cm15aW5kaWEu/Y29tL3N0YXRlcy9n/b2EvaW1hZ2UvZG9s/cGhpbi1pbi1iYWdh/LndlYnA" alt="Baga Beach">
+                <h3><a href="https://en.wikipedia.org/wiki/Baga_Beach" target="_blank">Baga Beach</a></h3>
+                <p>Baga Beach is one of the most popular beaches in Goa, known for its lively nightlife, water sports, and beach shacks offering delicious seafood and drinks.</p>
+            </div>
+    
+            <!-- Team Member 2 -->
+            <div class="team-member">
+                <img src="https://imgs.search.brave.com/IoY6AseLpBntV1jAZw6SEGj2vnt2dNLv0dHqolbkiZ0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy85/LzkzL0Jhc2lsaWNh/X29mX0JvbV9KZXN1/c182XyhPbGRfR29h/KS5qcGc" alt="Basilica of Bom Jesus">
+                <h3><a href="https://en.wikipedia.org/wiki/Basilica_of_Bom_Jesus" target="_blank">Basilica of Bom Jesus</a></h3>
+                <p>The Basilica of Bom Jesus, a UNESCO World Heritage Site, is a 400-year-old church in Old Goa. It is renowned for housing the relics of St. Francis Xavier.</p>
+            </div>
+    
+            <!-- Team Member 3 -->
+            <div class="team-member">
+                <img src="https://imgs.search.brave.com/06cw5hDDumITitTCs_ymp-Nq-ytFw5TiobfmSyFJqH8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzAwLzgzLzY2LzUx/LzM2MF9GXzgzNjY1/MTc3X3BGcWIwZ0tJ/U3JlUVlvMnphd2Jv/bnhoZWxKRjZpbGpP/LmpwZw" alt="Dudhsagar Falls">
+                <h3><a href="https://en.wikipedia.org/wiki/Dudhsagar_Falls" target="_blank">Dudhsagar Falls</a></h3>
+                <p>Dudhsagar Falls, located on the Mandovi River, is one of the tallest waterfalls in India. It offers stunning views and is surrounded by lush green forests.</p>
+            </div>
+    
+            <!-- Team Member 4 -->
+            <div class="team-member">
+                <img src="https://imgs.search.brave.com/dhs2me09xzP6drpRVPIryrmp-eudxDD3GG8JgXza3LA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy9m/L2Y4L0ZvcnRfQWd1/YWRhX0dvYS5KUEc" alt="Fort Aguada">
+                <h3><a href="https://en.wikipedia.org/wiki/Fort_Aguada" target="_blank">Fort Aguada</a></h3>
+                <p>Fort Aguada is a 17th-century Portuguese fort in North Goa. It offers panoramic views of the Arabian Sea and is a popular spot for history enthusiasts and photographers.</p>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Andhra Pradesh Section -->
+    <section id="ANDHRA_PRADESH">
+        <h2>Andhra Pradesh</h2>
+        <div class="team-members">
+            <!-- Team Member 1 -->
+            <div class="team-member">
+                <img src="https://imgs.search.brave.com/mltpe14jn06299Idz06QrzheIwsPu2bDtpm7kDrffgo/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9oYmxp/bWcubW10Y2RuLmNv/bS9jb250ZW50L2h1/YmJsZS9pbWcvdGly/dXBhdGkvbW10L2Rl/c3RpbmF0aW9uL21f/VGlydXBhdGlfYWN0/aXZpdHlfcmVsaWdp/b3VzX2xfMjk2XzU1/Ny5qcGc" alt="Tirupati">
+                <h3><a href="https://en.wikipedia.org/wiki/Tirupati" target="_blank">Tirupati</a></h3>
+                <p>Tirupati is a city in the Chittoor district of Andhra Pradesh, famous for the Tirumala Venkateswara Temple, one of the holiest Hindu pilgrimage sites.</p>
+            </div>
+
+            <!-- Team Member 2 -->
+            <div class="team-member">
+                <img src="https://imgs.search.brave.com/gOKibFWW3VcXD6pBV2FK4PeqNYQ8scQn5R5-IbEMDOc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/dHJhd2VsbC5pbi9h/ZG1pbi9pbWFnZXMv/dXBsb2FkLzcxOTI0/OTk5OEFtYXJhdmF0/aGlfU3R1cGEuanBn" alt="Amaravati Stupa">
+                <h3><a href="https://en.wikipedia.org/wiki/Amaravati_Stupa" target="_blank">Amaravati Stupa</a></h3>
+                <p>The Amaravati Stupa is a heritage Buddhist site located in Amaravathi, showcasing ancient Buddhist art and architecture.</p>
+            </div>
+
+            <!-- Team Member 3 -->
+            <div class="team-member">
+                <img src="https://imgs.search.brave.com/A32z9A7gHSqNeGJX6oEtTSe8qZQdvUh6sZ1XqYK9BCY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/dHJhd2VsbC5pbi9h/ZG1pbi9pbWFnZXMv/dXBsb2FkLzI0OTg0/NDU5NEthbGFzYWdp/cmlfTWFpbi5qcGc" alt="Kailasagiri">
+                <h3><a href="https://en.wikipedia.org/wiki/Kailasagiri" target="_blank">Kailasagiri</a></h3>
+                <p>Kailasagiri is a hilltop park in Visakhapatnam with panoramic views of the sea, lush greenery, and iconic statues of Shiva and Parvati.</p>
+            </div>
+
+            <!-- Team Member 4 -->
+            <div class="team-member">
+                <img src="https://imgs.search.brave.com/WUbV39Y84Mu362hvHhzH9hhsNeJuQQixDw0sE65jmUc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly92aXph/Z3RvdXJpc20ub3Jn/LmluL2ltYWdlcy9w/bGFjZXMtdG8tdmlz/aXQvaGVhZGVyL2Jv/cnJhLWNhdmVzLXZp/emFnLXRvdXJpc20t/ZW50cnktZmVlLXRp/bWluZ3MtaG9saWRh/eXMtcmV2aWV3cy1o/ZWFkZXIuanBn" alt="Borra Caves">
+                <h3><a href="https://en.wikipedia.org/wiki/Borra_Caves" target="_blank">Borra Caves</a></h3>
+                <p>The Borra Caves are natural limestone caves located in the Ananthagiri hills, known for their stalactites and stalagmites.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Arunachal Pradesh Section -->
+    <section id="ARUNACHAL_PRADESH">
+        <h2>Arunachal Pradesh</h2>
+        <div class="team-members">
+            <!-- Team Member 1 -->
+            <div class="team-member">
+                <img src="https://imgs.search.brave.com/Pg8awDgyB2AVqlso3ZNkHxkAnj6JxlR31AILSu_zJ3c/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9oYmxp/bWcubW10Y2RuLmNv/bS9jb250ZW50L2h1/YmJsZS9pbWcvdGF3/YW5nZGVzdGltZ3Mv/bW10L2FjdGl2aXRp/ZXMvbV9UYXdhbmdf/TW9uYXN0ZXJ5XzFf/bF81NjRfNjQwLmpw/Zw" alt="Tawang Monastery">
+                <h3><a href="https://en.wikipedia.org/wiki/Tawang_Monastery" target="_blank">Tawang Monastery</a></h3>
+                <p>Tawang Monastery is the largest monastery in India, located in Tawang, and an important center for Mahayana Buddhism.</p>
+            </div>
+
+            <!-- Team Member 2 -->
+            <div class="team-member">
+                <img src="https://imgs.search.brave.com/Y3sYrbzQahww7STEW5xuVp06z1yz9pBTgkt55__wYpg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy84/Lzg0L1NhbG5hX0Jh/cmksX0JoYWx1a3Bv/bmcuanBn" alt="Bhalukpong">
+                <h3><a href="https://en.wikipedia.org/wiki/Bhalukpong" target="_blank">Bhalukpong</a></h3>
+                <p>Bhalukpong is a serene town known for its picturesque views, river rafting, and as a gateway to Pakhui Wildlife Sanctuary.</p>
+            </div>
+
+            <!-- Team Member 3 -->
+            <div class="team-member">
+                <img src="https://imgs.search.brave.com/DPktl0OkhRAMsKpQl5vQUsjV_gfWYmZRgRPMur68kFg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YTEudGhyaWxsb3Bo/aWxpYS5jb20vZmls/ZXN0b3JlLzdoYnl6/Z3RlOTdwYnNkeHR4/cG14YjZnNW5kMHRf/VGF3YW5nX0dhdGUu/anBnP3c9MTQ0MCZk/cHI9Mg" alt="Sela Pass">
+                <h3><a href="https://en.wikipedia.org/wiki/Sela_Pass" target="_blank">Sela Pass</a></h3>
+                <p>The Sela Pass is a high-altitude mountain pass known for its scenic beauty and strategic importance in Arunachal Pradesh.</p>
+            </div>
+
+            <!-- Team Member 4 -->
+            <div class="team-member">
+                <img src="https://imgs.search.brave.com/U1eSajpp9xFlO_zmHKGb0Se6yQH6folyZvYxch8yZT8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTUw/MTgyMjQ3L3Bob3Rv/L3ppcm8tdmFsbGV5/LWFydW5hY2hhbC1w/cmFkZXNoLmpwZz9z/PTYxMng2MTImdz0w/Jms9MjAmYz0wUXhv/bzRyb2pzSm5pS2Q3/Z2dwWV9kclBHdkh6/d3Q2aWt1WUV3QlNR/RzZjPQ" alt="Ziro Valley">
+                <h3><a href="https://en.wikipedia.org/wiki/Ziro_Valley" target="_blank">Ziro Valley</a></h3>
+                <p>Ziro Valley is a UNESCO World Heritage Site known for its stunning landscapes, rice fields, and the vibrant Apatani tribal culture.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="cta">
+        <a href="contact_us.html" class="cta">Contact Us</a>
+        <a href="feedback.html" class="cta">FeedBack</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Travel Planner. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

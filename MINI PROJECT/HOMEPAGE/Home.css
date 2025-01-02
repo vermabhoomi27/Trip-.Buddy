@@ -1,0 +1,377 @@
+body{
+     background-image:url("https://png.pngtree.com/background/20230625/original/pngtree-aesthetic-road-trip-spectacular-landscape-in-3d-isolation-for-travel-and-picture-image_4046521.jpg");
+    background-size: cover;
+    backdrop-filter: blur(1px);
+     
+    font-family:Arial, sans-serif;
+    margin:0;
+    padding:0;
+    filter: blur();
+}
+/* .hero {
+    position: relative;
+    height: 100vh;
+    background-image: url('https://source.unsplash.com/1600x900/?travel,adventure'); /* Background image 
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-content {
+    background: rgba(0, 0, 0, 0.4); /* Semi-transparent background 
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 700px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-btn {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: #1E90FF;
+    border: none;
+    border-radius: 50px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.cta-btn:hover {
+    background-color: #FFD700; /* Change color on hover 
+}*/
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1px 1px;
+    background-color: #1E90FF;
+    color: white;
+    padding: 0 20px;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+    font-family: 'Georgia', serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+    padding: 1px 1px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #FFD700, #FF6347);/* Gold to Tomato gradient */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+header .logo .icon {
+    font-size: 3rem;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+/* Add a hover effect for the logo */
+header .logo:hover {
+    transform: scale(1.05);
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+header .logo:hover .icon {
+    transform: rotate(15deg); /* Rotate the icon slightly */
+}
+
+header .logo h1 {
+    font-size: 2rem;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 15px;
+    padding: 1px 1px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #FFD700;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.profile-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.username {
+    font-size: 1rem;
+    font-weight: bold;
+}
+.dropdown {
+    display: none; /* Initially hidden */
+    position: absolute;
+    top: 45px;
+    right: 0;
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 150px;
+}
+
+.dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown ul li {
+    border-bottom: 1px solid #ddd;
+}
+
+.dropdown ul li:last-child {
+    border-bottom: none;
+}
+
+.dropdown ul li a {
+    display: block;
+    padding: 10px;
+    color: black;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown ul li a:hover {
+    background-color: #f0f0f0;
+}
+
+/* Show dropdown when profile is hovered */
+.profile:hover .dropdown {
+    display: block;
+}
+
+
+ .hero{
+    text-align: center;
+    font-size: 2.4rem;
+    font-style: oblique;
+}
+/* .hero {
+    /* background-image: url('https://example.com/hero-image.jpg'); Replace with your image URL 
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    position: relative;
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+} */
+/* 
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    /* height: max-content;
+    width: 100%; 
+}
+.search-container input {
+    padding: 10px;
+    width: 250px;
+    border-radius: 50px;
+    border: solid black;
+    font-size: 1rem;
+    padding-left: 35px; /* Space for the icon 
+    position: relative;
+}
+.search-container input::placeholder {
+    color: #bbb;
+}
+.search-container i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #bbb;
+}
+
+.search-container button {
+    padding: 10px 20px;
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.search-container button:hover {
+    background-color: #e5533e;
+} */
+
+/* /* .cta{
+    background-color: #FFC107;
+    color: black;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px; */
+ 
+.destinations{
+    font-size: 2.4rem;
+    font-family: Georgia, 'Times New Roman', Times, serif ;
+    margin-bottom: 40px;
+    margin-left: 40px;
+    margin-right: 80px;
+    text-align: center;
+}
+.destination-grid{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);/*1 fraction equal parition*/
+    grid-gap: 40px;
+} 
+ .destination img{
+       width: 100%;
+       height: 400px;
+       object-fit: cover;
+       border-radius: 30%;
+}  
+.destination {
+    text-align: left;
+}
+.destination h3{
+    font-size: 2rem;
+}
+.destination p{
+    font-size: 1.6rem;
+    line-height: 1;
+    font-family: "Dongle-regular";
+}
+.testimonials{
+    margin:auto;
+}
+
+.testimonials h2{
+    text-align: center;
+}
+.testimonial p{
+    margin: auto;
+    box-sizing: content-box;
+    text-align: center;
+}
+/* footer{
+    margin: auto;
+    
+} */
+footer {
+    text-align: center;
+    padding: 1px 1px;
+    background-color: #1E90FF;
+    color: white;
+    margin-top: 40px;
+}
+    /*background-image: filter: blur(8px);
+}
+
+
+
+/*.hero{
+    background-image:url("https://img.jagrantv.com/webstories/ws4431/1686288494-1.jpg");
+}*/
+/* CSS Styles */
+/* .travel-planner {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    margin: 20px;
+    overflow: hidden;
+  } */
+  /* .destination-grid {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    margin: 20px;
+    overflow: hidden;
+  }
+  .image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  .image:hover {
+    transform: scale(1.1);
+  }
+  
+  .caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  
+  .image:hover + .caption {
+    opacity: 1;
+  } */

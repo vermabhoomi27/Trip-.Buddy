@@ -1,0 +1,784 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback - Travel Planner</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    /* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header and Navigation */
+/* header {
+    background-color: #333;
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+nav ul li a.active {
+    font-weight: bold;
+}
+
+/* Main Section 
+main {
+    padding: 2rem;
+} */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1px 1px;
+    background-color: #1E90FF;
+    color: white;
+    padding: 0 20px;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+    font-family: 'Georgia', serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+    padding: 1px 1px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #FFD700, #FF6347);/* Gold to Tomato gradient */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+header .logo .icon {
+    font-size: 3rem;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+/* Add a hover effect for the logo */
+header .logo:hover {
+    transform: scale(1.05);
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+header .logo:hover .icon {
+    transform: rotate(15deg); /* Rotate the icon slightly */
+}
+
+header .logo h1 {
+    font-size: 2rem;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 15px;
+    padding: 1px 1px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #FFD700;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.profile-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.username {
+    font-size: 1rem;
+    font-weight: bold;
+}
+.dropdown {
+    display: none; /* Initially hidden */
+    position: absolute;
+    top: 45px;
+    right: 0;
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 150px;
+}
+
+.dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown ul li {
+    border-bottom: 1px solid #ddd;
+}
+
+.dropdown ul li:last-child {
+    border-bottom: none;
+}
+
+.dropdown ul li a {
+    display: block;
+    padding: 10px;
+    color: black;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown ul li a:hover {
+    background-color: #f0f0f0;
+}
+
+/* Show dropdown when profile is hovered */
+.profile:hover .dropdown {
+    display: block;
+}
+
+
+ .hero{
+    text-align: center;
+    font-size: 2.4rem;
+    font-style: oblique;
+}
+
+.feedback-form {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.feedback-form h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.feedback-form p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Rating Section */
+.rating {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1.5rem;
+}
+
+.rating input {
+    display: none;
+}
+
+.rating label {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.rating input:checked + label {
+    color: #f1c40f;
+}
+
+/* Feedback Textareas */
+textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+textarea::placeholder {
+    font-style: italic;
+}
+
+/* Submit Button */
+.submit-btn {
+    background-color: #333;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: #555;
+}
+
+/* Footer */
+/* footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+} */
+footer {
+    text-align: center;
+    padding: 1px 1px;
+    background-color: #1E90FF;
+    color: white;
+    margin-top: 40px;
+}
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+        .rating {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .rating label {
+            margin: 0.5rem 0;
+        }
+
+        .feedback-form {
+            padding: 1.5rem;
+        }
+
+        .submit-btn {
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 480px) {
+        header {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        header .logo {
+            margin-bottom: 1rem;
+        }
+
+        nav ul {
+            flex-direction: column;
+            margin-top: 1rem;
+        }
+
+        nav ul li {
+            margin-bottom: 1rem;
+        }
+    }
+  
+
+</style>
+<body>
+     <header>
+        <nav>
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="index.html">Plans</a></li>
+                <li><a href="Guide.html">Guide</a></li>
+                <li><a href="Aboutus.html">About</a></li>
+                <li><a href="Login.html">Login</a></li>
+                 <li><a href="Login.html" class="active">Feedback</a></li>
+            </ul>
+        </nav>
+    </header>
+    <header>
+        <div class="logo">
+            <span class="icon">✈️</span>
+            <h1>Trip Buddy</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="index.html">Plans</a></li>
+                <li><a href="Guide.html">Guide</a></li>
+                <li><a href="Aboutus.html">About</a></li>
+                <li><a href="Login.html">Login</a></li>
+            </ul>
+        </nav>
+        <div class="profile">
+            <img src="https://png.pngtree.com/png-vector/20191110/ourmid/pngtree-avatar-icon-profile-icon-member-login-vector-isolated-png-image_1978396.jpg" alt="Profile" class="profile-icon">
+             <span class="username">John Doe</span> 
+            <div class="dropdown">
+                <ul>
+                    <li><a href="profile.html">View Profile</a></li>
+                    <li><a href="settings.html">Settings</a></li>
+                    <li><a href="#">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="feedback-form">
+            <h1>Your Feedback Matters</h1>
+            <p>We value your feedback to improve our services. Please share your thoughts below.</p>
+
+            <form action="submit_feedback.php" method="POST">
+                <!-- Rating Section 
+                <label for="rating">Rate our Service:</label>
+                <div class="rating">
+                    <input type="radio" id="1" name="rating" value="1" required>
+                    <label for="1">1</label>
+                    <input type="radio" id="2" name="rating" value="2">
+                    <label for="2">2</label>
+                    <input type="radio" id="3" name="rating" value="3">
+                    <label for="3">3</label>
+                    <input type="radio" id="4" name="rating" value="4">
+                    <label for="4">4</label>
+                    <input type="radio" id="5" name="rating" value="5">
+                    <label for="5">5</label>
+                </div>
+
+                <!-- Comment Section 
+                <label for="comments">Your Comments:</label>
+                <textarea id="comments" name="comments" rows="4" placeholder="Share your experience..." required></textarea>
+
+                <!-- Suggestions Section 
+                <label for="suggestions">Suggestions for Improvement:</label>
+                <textarea id="suggestions" name="suggestions" rows="4" placeholder="How can we improve?" required></textarea>
+
+                <!-- Submit Button 
+                <button type="submit" class="submit-btn">Submit Feedback</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Travel Planner. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript for form validation
+        document.getElementById('feedbackForm').addEventListener('submit', function (event) {
+            let rating = document.querySelector('input[name="rating"]:checked');
+            if (!rating) {
+                event.preventDefault();
+                alert("Please rate the service before submitting.");
+            } else {
+                alert("Thank you for your feedback!");
+            }
+        });
+    </script>
+    
+</body>
+</html>  -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback - Travel Planner</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+</head>
+<style>
+    /* General Reset */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        color: #333;
+    }
+    header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1px 1px;
+    background-color: #1E90FF;
+    color: white;
+    padding: 0 20px;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+    font-family: 'Georgia', serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+    padding: 1px 1px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #FFD700, #FF6347);/* Gold to Tomato gradient */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+header .logo .icon {
+    font-size: 3rem;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+/* Add a hover effect for the logo */
+header .logo:hover {
+    transform: scale(1.05);
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+header .logo:hover .icon {
+    transform: rotate(15deg); /* Rotate the icon slightly */
+}
+
+header .logo h1 {
+    font-size: 2rem;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 15px;
+    padding: 1px 1px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #FFD700;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.profile-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.username {
+    font-size: 1rem;
+    font-weight: bold;
+}
+.dropdown {
+    display: none; /* Initially hidden */
+    position: absolute;
+    top: 45px;
+    right: 0;
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 150px;
+}
+
+.dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown ul li {
+    border-bottom: 1px solid #ddd;
+}
+
+.dropdown ul li:last-child {
+    border-bottom: none;
+}
+
+.dropdown ul li a {
+    display: block;
+    padding: 10px;
+    color: black;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown ul li a:hover {
+    background-color: #f0f0f0;
+}
+
+/* Show dropdown when profile is hovered */
+.profile:hover .dropdown {
+    display: block;
+}
+
+
+ .hero{
+    text-align: center;
+    font-size: 2.4rem;
+    font-style: oblique;
+}
+
+
+    .feedback-form {
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: white;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .feedback-form h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .feedback-form p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Rating Section */
+    .rating {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 1.5rem;
+    }
+
+    .rating input {
+        display: none;
+    }
+
+    .rating label {
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: color 0.3s ease;
+    }
+
+    .rating input:checked + label {
+        color: #f1c40f;
+    }
+
+    /* Feedback Textareas */
+    textarea {
+        width: 100%;
+        padding: 0.8rem;
+        margin-bottom: 1rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
+
+    textarea::placeholder {
+        font-style: italic;
+    }
+
+    /* Submit Button */
+    .submit-btn {
+        background-color: #333;
+        color: white;
+        padding: 0.8rem 1.5rem;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .submit-btn:hover {
+        background-color: #555;
+    }
+
+    /* Footer */
+    footer {
+        text-align: center;
+        padding: 1px 1px;
+        background-color: #1E90FF;
+        color: white;
+        margin-top: 40px;
+    }
+
+    /* Media Queries for Responsiveness */
+    @media (max-width: 768px) {
+        .rating {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .rating label {
+            margin: 0.5rem 0;
+        }
+
+        .feedback-form {
+            padding: 1.5rem;
+        }
+
+        .submit-btn {
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 480px) {
+        header {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        header .logo {
+            margin-bottom: 1rem;
+        }
+
+        nav ul {
+            flex-direction: column;
+            margin-top: 1rem;
+        }
+
+        nav ul li {
+            margin-bottom: 1rem;
+        }
+    }
+</style>
+<body>
+    <!-- <header>
+        <div class="logo">
+            <span class="icon">✈️</span>
+            <h1>Trip Buddy</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="index.html">Plans</a></li>
+                <li><a href="Guide.html">Guide</a></li>
+                <li><a href="Aboutus.html">About</a></li>
+                <li><a href="Login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header> -->
+    <header>
+        <div class="logo">
+            <span class="icon">✈️</span>
+            <h1>Trip Buddy</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="index.html">Plans</a></li>
+                <li><a href="Guide.html">Guide</a></li>
+                <li><a href="Aboutus.html">About</a></li>
+                <li><a href="Login.html">Login</a></li>
+            </ul>
+        </nav>
+        <div class="profile">
+            <img src="https://png.pngtree.com/png-vector/20191110/ourmid/pngtree-avatar-icon-profile-icon-member-login-vector-isolated-png-image_1978396.jpg" alt="Profile" class="profile-icon">
+            <!-- <span class="username">John Doe</span> -->
+            <div class="dropdown">
+                <ul>
+                    <li><a href="profile.html">View Profile</a></li>
+                    <li><a href="settings.html">Settings</a></li>
+                    <li><a href="Home.html">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="feedback-form">
+            <h1>Your Feedback Matters</h1>
+            <p>We value your feedback to improve our services. Please share your thoughts below.</p>
+
+            <form id="feedbackForm" action="submit_feedback.php" method="POST">
+                <!-- Rating Section -->
+                <label for="rating">Rate our Service:</label>
+                <div class="rating">
+                    <input type="radio" id="1" name="rating" value="1" required>
+                    <label for="1">1</label>
+                    <input type="radio" id="2" name="rating" value="2">
+                    <label for="2">2</label>
+                    <input type="radio" id="3" name="rating" value="3">
+                    <label for="3">3</label>
+                    <input type="radio" id="4" name="rating" value="4">
+                    <label for="4">4</label>
+                    <input type="radio" id="5" name="rating" value="5">
+                    <label for="5">5</label>
+                </div>
+
+                <!-- Comment Section -->
+                <label for="comments">Your Comments:</label>
+                <textarea id="comments" name="comments" rows="4" placeholder="Share your experience..." required></textarea>
+
+                <!-- Suggestions Section -->
+                <label for="suggestions">Suggestions for Improvement:</label>
+                <textarea id="suggestions" name="suggestions" rows="4" placeholder="How can we improve?" required></textarea>
+
+                <!-- Submit Button -->
+                <button type="submit" class="submit-btn">Submit Feedback</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Travel Planner. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript for form validation
+        document.getElementById('feedbackForm').addEventListener('submit', function (event) {
+            let rating = document.querySelector('input[name="rating"]:checked');
+            if (!rating) {
+                event.preventDefault();
+                alert("Please rate the service before submitting.");
+            } else {
+                alert("Thank you for your feedback!");
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+

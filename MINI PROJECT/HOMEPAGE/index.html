@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Planner</title>
+  <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+    background-image: url("https://imgs.search.brave.com/8slr97tXZLt9cDWiuq0TtwRApmX0nk3x43v9EK45mbA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/bXVjaGJldHRlcmFk/dmVudHVyZXMuY29t/L21hZ2F6aW5lL2Nv/bnRlbnQvaW1hZ2Vz/LzIwMTkvMDYvMTMx/MjAzNTQvaVN0b2Nr/LTU0MzE4MzAxODEu/anBn");
+  }
+  
+  /* header {
+    background-color: #ff6f61;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+  } */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    background-color: #1E90FF;
+    color: white;
+    padding: 0 20px;
+}
+header .logo {
+    display: flex;
+    align-items: center;
+    font-family: 'Georgia', serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+    padding: 5px 15px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #FFD700, #FF6347);/* Gold to Tomato gradient */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+header .logo .icon {
+    font-size: 3rem;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+/* Add a hover effect for the logo */
+header .logo:hover {
+    transform: scale(1.05);
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+header .logo:hover .icon {
+    transform: rotate(15deg); /* Rotate the icon slightly */
+}
+
+header .logo h1 {
+    font-size: 2rem;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #FFD700;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.profile-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.username {
+    font-size: 1rem;
+    font-weight: bold;
+}
+.dropdown {
+    display: none; /* Initially hidden */
+    position: absolute;
+    top: 45px;
+    right: 0;
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 150px;
+}
+
+.dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown ul li {
+    border-bottom: 1px solid #ddd;
+}
+
+.dropdown ul li:last-child {
+    border-bottom: none;
+}
+
+.dropdown ul li a {
+    display: block;
+    padding: 10px;
+    color: black;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown ul li a:hover {
+    background-color: #f0f0f0;
+}
+
+/* Show dropdown when profile is hovered */
+.profile:hover .dropdown {
+    display: block;
+}
+  
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  main {
+    padding: 20px;
+  }
+  
+  #travel-input {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin: 10px 0 5px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #e65a51;
+  }
+  
+  #suggestions {
+    margin-top: 30px;
+  }
+  
+  #suggestions-list {
+    background-color: whitesmoke;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+  }
+  /* #suggestions-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+    margin-top: 30px;
+} */
+
+.destination-card {
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.destination-card:hover {
+    transform: translateY(-10px);
+}
+
+.destination-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.destination-card h3 {
+    font-size: 18px;
+    color: #333;
+    margin: 12px 0 8px;
+}
+
+.destination-card p {
+    font-size: 14px;
+    color: #555;
+    margin: 0 12px 12px;
+}
+
+.destination-card p:last-child {
+    font-weight: bold;
+    color: #007BFF;
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 10px;
+    background-color:#1E90FF;
+    color: white;
+  }
+  
+</style>
+<body>
+  <!-- <header>
+    <h1>Trip Buddy</h1>
+    <p>Plan your perfect getaway with just a few clicks!</p>
+  </header> -->
+  
+  <header>
+    <div class="logo">
+        <span class="icon">✈️</span>
+        <h1>Trip Buddy</h1>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="Home.html">Home</a></li>
+            <li><a href="index.html">Plans</a></li>
+            <li><a href="Guide.html">Guide</a></li>
+            <li><a href="Aboutus.html">About</a></li>
+            <li><a href="Login.html">Login</a></li>
+        </ul>
+    </nav>
+    <div class="profile">
+        <img src="https://png.pngtree.com/png-vector/20191110/ourmid/pngtree-avatar-icon-profile-icon-member-login-vector-isolated-png-image_1978396.jpg" alt="Profile" class="profile-icon">
+        <!-- <span class="username">John Doe</span> -->
+        <div class="dropdown">
+            <ul>
+                <li><a href="profile.html">View Profile</a></li>
+                <li><a href="settings.html">Settings</a></li>
+                <li><a href="Home.html">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+ </header>
+
+  <main>
+    <section id="travel-input">
+      <h2>Enter Your Travel Details</h2>
+      <form id="travel-form">
+        <label for="destination">Destination:</label>
+        <input type="text" id="destination" placeholder="Enter a city or destination" required>
+
+        <label for="start-date">Start Date:</label>
+        <input type="date" id="start-date" required>
+
+        <label for="end-date">End Date:</label>
+        <input type="date" id="end-date" required>
+
+        <label for="budget">Budget (USD):</label>
+        <input type="number" id="budget" placeholder="Enter your budget" required>
+
+        <button type="submit">Generate Travel Plan</button>
+      </form>
+    </section>
+
+    <section id="suggestions">
+      <h2>Your Suggested Travel Plan</h2>
+      <div id="suggestions-list">
+        <!-- Travel plan suggestions will appear here -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Travel Planner. All rights reserved.</p>
+  </footer>
+
+  <!-- <script src="data.js"></script>
+  <script src="app.js"></script> -->
+  <script>
+    // // data.js
+
+const destinations = [
+  {
+    name: "Amritsar",
+    country: "India",
+    region: "Punjab",
+    image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2b/6b/92/ef/caption.jpg?w=1200&h=-1&s=1", // Placeholder image
+    budget: 1000, // Suggested budget in USD
+    
+  },
+  {
+    name: "Uttarakhand",
+    country: "India",
+    region: "Northern India",
+    image: "https://imgcdn.flamingotravels.co.in/Images/Menu/Destination/Destination-%20Uttarakhand.jpg", // Placeholder image
+    description: "Uttarakhand offers stunning hill stations, temples, and serene natural landscapes. A great spot for nature lovers.",
+    budget: 1200, // Suggested budget in USD
+  },
+  {
+    name: "Rajasthan",
+    country: "India",
+    region: "Western India",
+    image: "https://www.fabhotels.com/blog/wp-content/uploads/2021/05/Amer_Fort_600x400.jpg", // Placeholder image
+    description: "Rajasthan is famous for its majestic forts, royal palaces, and desert landscapes, including the iconic Amber Fort.",
+    budget: 1500, // Suggested budget in USD
+  },
+  {
+    name: "Andhra Pradesh",
+    country: "India",
+    region: "Southern India",
+    image: "https://static.toiimg.com/thumb/resizemode-4,width-1280,height-720,msid-97189691/97189691.jpg", // Placeholder image
+    description: "Andhra Pradesh is home to stunning temples, scenic valleys, and beaches, with Tirupati being a top pilgrimage destination.",
+    budget: 900, // Suggested budget in USD
+  },
+  {
+    name: "Kerala",
+    country: "India",
+    region: "Southern India",
+    image: "https://static.wanderon.in/wp-content/uploads/2023/09/untitled-design-2023-09-08t160707.893-min.png", // Placeholder image
+    description: "Kerala offers beautiful beaches, tranquil backwaters, and vibrant culture. It's perfect for a relaxing holiday.",
+    budget: 1300, // Suggested budget in USD
+  },
+  
+  {
+    name: "New Delhi",
+    country: "India",
+    region: "North India",
+    image: "https://imgs.search.brave.com/ucioC3V8wKeIwvybnXwETuN9h8496QTmAjryYrLWfBg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTE2/MDk3NTA1OS9waG90/by9xdXR1Yi1taW5h/ci1hbmQtaXRzLW1v/bnVtZW50cy1kZWxo/aS5qcGc_cz02MTJ4/NjEyJnc9MCZrPTIw/JmM9bkNRcG1WWXNm/RllwTWc4aS02a1Fr/dUhmUTlQLTVJWEd4/eUFEVkl0aURfaz0", // Replace with an actual image URL
+    description: "New Delhi, the capital of India, is a vibrant city with a rich history and modern infrastructure. Key attractions include the Red Fort, India Gate, Qutub Minar, and Jama Masjid.",
+    budget: 1500 // Estimated budget in USD
+  },
+  {
+    name: "Mumbai",
+    country: "India",
+    region: "West India",
+    image: "https://www.agoda.com/wp-content/uploads/2024/01/Featured-image-Gateway-of-India-Mumbai-1244x700.jpg", // Replace with an actual image URL
+    description: "Mumbai is the financial capital of India, known for Bollywood, the Gateway of India, and bustling streets. Attractions include Marine Drive, Elephanta Caves, and the Chhatrapati Shivaji Maharaj Terminus.",
+    budget: 1800 // Estimated budget in USD
+  },
+  {
+    name: "Jaipur",
+    country: "India",
+    region: "Rajasthan",
+    image: "https://imgs.search.brave.com/bujhtC8w0urs1WJRjMfh_uKN88-8vyJrio31qVM0izo/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5hdWRsZXl0cmF2/ZWwuY29tLy0vbWVk/aWEvaW1hZ2VzL2hv/bWUvaW5kaWFuLXN1/YmNvbnRpbmVudC9p/bmRpYS9jb3VudHJ5/LWd1aWRlcy93aGF0/LXRvLWRvLWluLWlu/ZGlhL2FtYmVyX2Zv/cnRfNTMwOTgzLmpw/Zz9xPTc5Jnc9MTky/MCZoPTY4NQ", // Replace with an actual image URL
+    description: "Jaipur, the Pink City, is famous for its palaces, forts, and rich Rajasthani culture. Visit landmarks such as Amber Fort, Hawa Mahal, City Palace, and the Jantar Mantar observatory.",
+    budget: 1200 // Estimated budget in USD
+  },
+  {
+    name: "Bengaluru",
+    country: "India",
+    region: "South India",
+    image: "https://imgs.search.brave.com/pKlJjJidfQz_ZNLjFXmuTkDv98wMcfSMSMGge5zmw3g/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy9l/L2VlL05hZ2FuYXRo/ZXNodmFyYV9UZW1w/bGVfKDl0aF9jZW50/dXJ5KV9hdF9CZWd1/cixfQmVuZ2FsdXJ1/LkpQRw", // Replace with an actual image URL
+    description: "Bengaluru is India's tech hub, also known for its beautiful parks and gardens. Popular attractions include Bangalore Palace, Lalbagh Botanical Garden, and Vidhana Soudha.",
+    budget: 1400 // Estimated budget in USD
+  },
+  {
+    name: "Chennai",
+    country: "India",
+    region: "South India",
+    image: "https://example.com/chennai.jpg", // Replace with an actual image URL
+    description: "Chennai, a coastal city, is famous for its temples, beaches, and cultural heritage. The Marina Beach, Kapaleeshwarar Temple, and Fort St. George are some of its popular attractions.",
+    budget: 1100 // Estimated budget in USD
+  },
+  {
+    name: "Kolkata",
+    country: "India",
+    region: "East India",
+    image: "https://example.com/kolkata.jpg", // Replace with an actual image URL
+    description: "Kolkata, known as the cultural capital of India, has a rich colonial legacy. Major attractions include Victoria Memorial, Howrah Bridge, and the Indian Museum.",
+    budget: 1000 // Estimated budget in USD
+  },
+  {
+    name: "Varanasi",
+    country: "India",
+    region: "North India",
+    image: "https://example.com/varanasi.jpg", // Replace with an actual image URL
+    description: "Varanasi, one of the oldest cities in the world, is a spiritual center for Hindus. Famous for its ghats on the Ganges River, Kashi Vishwanath Temple, and the mesmerizing Ganga Aarti.",
+    budget: 800 // Estimated budget in USD
+  },
+  {
+    name: "Agra",
+    country: "India",
+    region: "North India",
+    image: "https://example.com/agra.jpg", // Replace with an actual image URL
+    description: "Agra is home to the iconic Taj Mahal, one of the Seven Wonders of the World. Other must-visit sites include Agra Fort, Fatehpur Sikri, and Mehtab Bagh.",
+    budget: 900 // Estimated budget in USD
+  },
+  {
+    name: "Goa",
+    country: "India",
+    region: "West India",
+    image: "https://example.com/goa.jpg", // Replace with an actual image URL
+    description: "Goa, with its stunning beaches, vibrant nightlife, and Portuguese influence, is a popular holiday destination. Baga Beach, Basilica of Bom Jesus, and Dudhsagar Waterfalls are major attractions.",
+    budget: 1200 // Estimated budget in USD
+  },
+  {
+    name: "Udaipur",
+    country: "India",
+    region: "Rajasthan",
+    image: "https://example.com/udaipur.jpg", // Replace with an actual image URL
+    description: "Udaipur, the City of Lakes, is known for its beautiful palaces, serene lakes, and romantic atmosphere. Famous landmarks include Lake Pichola, City Palace, and Jag Mandir.",
+    budget: 1300 // Estimated budget in USD
+  }
+];
+
+
+  
+  // {
+  //   name: "New Delhi",
+  //   state: "Delhi",
+  //   description: "The capital of India, known for its rich history and vibrant culture. Famous landmarks include the Red Fort, India Gate, and Qutub Minar.",
+  //   image: "https://example.com/delhi.jpg",
+  //   famousLandmarks: ["Red Fort", "India Gate", "Qutub Minar"]
+  // },
+  // {
+  //   name: "Mumbai",
+  //   state: "Maharashtra",
+  //   description: "The financial capital of India, Mumbai is known for Bollywood, the Gateway of India, and Marine Drive.",
+  //   image: "https://example.com/mumbai.jpg",
+  //   famousLandmarks: ["Gateway of India", "Marine Drive", "Chhatrapati Shivaji Maharaj Terminus"]
+  // },
+  // {
+  //   name: "Jaipur",
+  //   state: "Rajasthan",
+  //   description: "Known as the 'Pink City', Jaipur is famous for its historic palaces, forts, and vibrant bazaars.",
+  //   image: "https://example.com/jaipur.jpg",
+  //   famousLandmarks: ["Hawa Mahal", "Amber Fort", "City Palace"]
+  // },
+  // {
+  //   name: "Bengaluru",
+  //   state: "Karnataka",
+  //   description: "Known as the 'Silicon Valley of India', Bengaluru is a hub for IT and modern infrastructure, along with parks and gardens.",
+  //   image: "https://example.com/bengaluru.jpg",
+  //   famousLandmarks: ["Bangalore Palace", "Cubbon Park", "Vidhana Soudha"]
+  // },
+  // {
+  //   name: "Chennai",
+  //   state: "Tamil Nadu",
+  //   description: "Chennai is known for its beautiful beaches, ancient temples, and rich cultural heritage.",
+  //   image: "https://example.com/chennai.jpg",
+  //   famousLandmarks: ["Marina Beach", "Kapaleeshwarar Temple", "Fort St. George"]
+  // },
+  // {
+  //   name: "Kolkata",
+  //   state: "West Bengal",
+  //   description: "Kolkata, the cultural capital of India, is known for its colonial architecture, literature, and the famous Howrah Bridge.",
+  //   image: "https://example.com/kolkata.jpg",
+  //   famousLandmarks: ["Howrah Bridge", "Victoria Memorial", "Indian Museum"]
+  // },
+  // {
+  //   name: "Varanasi",
+  //   state: "Uttar Pradesh",
+  //   description: "One of the oldest living cities in the world, Varanasi is a spiritual hub, famous for its ghats on the Ganges river and Kashi Vishwanath Temple.",
+  //   image: "https://example.com/varanasi.jpg",
+  //   famousLandmarks: ["Kashi Vishwanath Temple", "Dashashwamedh Ghat", "Sarnath"]
+  // },
+  // {
+  //   name: "Agra",
+  //   state: "Uttar Pradesh",
+  //   description: "Agra is home to the Taj Mahal, one of the Seven Wonders of the World, and other Mughal-era monuments.",
+  //   image: "https://example.com/agra.jpg",
+  //   famousLandmarks: ["Taj Mahal", "Agra Fort", "Fatehpur Sikri"]
+  // },
+  // {
+  //   name: "Goa",
+  //   state: "Goa",
+  //   description: "Known for its beautiful beaches, Goa is a popular tourist destination for relaxation, water sports, and vibrant nightlife.",
+  //   image: "https://example.com/goa.jpg",
+  //   famousLandmarks: ["Baga Beach", "Dona Paula", "Basilica of Bom Jesus"]
+  // },
+  // {
+  //   name: "Udaipur",
+  //   state: "Rajasthan",
+  //   description: "Often referred to as the 'City of Lakes', Udaipur is known for its picturesque lakes, palaces, and temples.",
+  //   image: "https://example.com/udaipur.jpg",
+  //   famousLandmarks: ["Lake Pichola", "City Palace", "Jag Mandir"]
+  // }
+
+
+
+//   {
+//     city: "New Delhi",
+//     startDate: "2024-05-10",
+//     endDate: "2024-05-15"
+//   },
+//   {
+//     city: "Mumbai",
+//     startDate: "2024-05-20",
+//     endDate: "2024-05-25"
+//   },
+//   {
+//     city: "Jaipur",
+//     startDate: "2024-06-01",
+//     endDate: "2024-06-05"
+//   },
+//   {
+//     city: "Bengaluru",
+//     startDate: "2024-06-10",
+//     endDate: "2024-06-15"
+//   },
+//   {
+//     city: "Chennai",
+//     startDate: "2024-06-20",
+//     endDate: "2024-06-25"
+//   },
+//   {
+//     city: "Kolkata",
+//     startDate: "2024-07-01",
+//     endDate: "2024-07-05"
+//   },
+//   {
+//     city: "Varanasi",
+//     startDate: "2024-07-10",
+//     endDate: "2024-07-15"
+//   },
+//   {
+//     city: "Agra",
+//     startDate: "2024-07-20",
+//     endDate: "2024-07-22"
+//   },
+//   {
+//     city: "Goa",
+//     startDate: "2024-08-01",
+//     endDate: "2024-08-05"
+//   },
+//   {
+//     city: "Udaipur",
+//     startDate: "2024-08-10",
+//     endDate: "2024-08-15"
+//   }
+ 
+</script>
+<script>
+    document.getElementById("travel-form").addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevent form submission
+    
+    // Get user input
+    const destination = document.getElementById("destination").value.toLowerCase();
+    const startDate = document.getElementById("start-date").value;
+    const endDate = document.getElementById("end-date").value;
+    const budget = parseFloat(document.getElementById("budget").value);
+    
+    // Find matching destinations based on input
+    const destinationData = destinations.filter(dest => 
+      dest.name.toLowerCase().includes(destination) && dest.budget <= budget
+    );
+  
+    // Clear previous suggestions
+    const suggestionsList = document.getElementById("suggestions-list");
+    suggestionsList.innerHTML = "";
+  
+    if (destinationData.length > 0) {
+      // Display matching destinations
+      destinationData.forEach(dest => {
+        const card = document.createElement("div");
+        card.classList.add("destination-card");
+  
+        const img = document.createElement("img");
+        img.src = dest.image;
+        card.appendChild(img);
+  
+        const name = document.createElement("h3");
+        name.textContent = dest.name;
+        card.appendChild(name);
+  
+        const description = document.createElement("p");
+        description.textContent = dest.description;
+        card.appendChild(description);
+  
+        const budgetText = document.createElement("p");
+        budgetText.textContent = `Suggested Budget: $${dest.budget}`;
+        card.appendChild(budgetText);
+  
+        suggestionsList.appendChild(card);
+      });
+    } else {
+      // Display message if no results found
+      const noResultsMessage = document.createElement("p");
+      noResultsMessage.textContent = "No destinations found that match your criteria.";
+      suggestionsList.appendChild(noResultsMessage);
+    }
+  });
+</script>
+</body>
+</html>

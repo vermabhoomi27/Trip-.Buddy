@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Planner Settings</title>
+    <style>
+        /* General styling */
+        /* body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* height: 100vh; 
+        } */
+        body{
+     /* background-image:url("https://png.pngtree.com/background/20230625/original/pngtree-aesthetic-road-trip-spectacular-landscape-in-3d-isolation-for-travel-and-picture-image_4046521.jpg");
+    background-size: cover;
+    backdrop-filter: blur(1px); */
+     
+    font-family:Arial, sans-serif;
+    margin:0;
+    padding:0;
+    filter: blur();
+    justify-content: center;
+    align-items: center;
+}
+        header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1px 1px;
+    background-color: #1E90FF;
+    color: white;
+    padding: 0 20px;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+    font-family: 'Georgia', serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+    padding: 1px 1px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #FFD700, #FF6347);/* Gold to Tomato gradient */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+header .logo .icon {
+    font-size: 3rem;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+/* Add a hover effect for the logo */
+header .logo:hover {
+    transform: scale(1.05);
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+header .logo:hover .icon {
+    transform: rotate(15deg); /* Rotate the icon slightly */
+}
+
+header .logo h1 {
+    font-size: 2rem;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 15px;
+    padding: 1px 1px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #FFD700;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.profile-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.username {
+    font-size: 1rem;
+    font-weight: bold;
+}
+.dropdown {
+    display: none; /* Initially hidden */
+    position: absolute;
+    top: 45px;
+    right: 0;
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 150px;
+}
+
+.dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown ul li {
+    border-bottom: 1px solid #ddd;
+}
+
+.dropdown ul li:last-child {
+    border-bottom: none;
+}
+
+.dropdown ul li a {
+    display: block;
+    padding: 10px;
+    color: black;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown ul li a:hover {
+    background-color: #f0f0f0;
+}
+
+/* Show dropdown when profile is hovered */
+.profile:hover .dropdown {
+    display: block;
+}
+
+         .settings-container {
+            width: 50%;
+            /* max-width: 900px; */
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin: auto;
+            margin-top: 10px;
+        }
+
+        .settings-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .settings-header h1 {
+            font-size: 36px;
+            color: #333;
+        }
+
+        .settings-header p {
+            font-size: 18px;
+            color: #666;
+        }
+
+        .settings-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .settings-form label {
+            font-size: 16px;
+            color: #333;
+        }
+
+        .settings-form input,
+        .settings-form select,
+        .settings-form textarea {
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .settings-form input[type="checkbox"] {
+            width: auto;
+        }
+
+        .settings-form .button-container {
+            text-align: center;
+        }
+
+        .settings-form button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .settings-form button:hover {
+            background-color: #45a049;
+        }
+
+        /* Responsive Design */ 
+        @media (max-width: 768px) {
+            .settings-container {
+                width: 100%;
+                padding: 20px;
+            }
+
+            .settings-form label {
+                font-size: 14px;
+            }
+
+            .settings-form input,
+            .settings-form select,
+            .settings-form textarea {
+                font-size: 14px;
+            }
+
+            .settings-form button {
+                padding: 10px 18px;
+            }
+        } 
+        footer {
+    text-align: center;
+    padding: 1px 1px;
+    background-color: #1E90FF;
+    color: white;
+    margin-top: 40px;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <span class="icon">✈️</span>
+            <h1>Trip Buddy</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="index.html">Plans</a></li>
+                <li><a href="Guide.html">Guide</a></li>
+                <li><a href="Aboutus.html">About</a></li>
+                <li><a href="Login.html">Login</a></li>
+            </ul>
+        </nav>
+        <div class="profile">
+            <img src="https://png.pngtree.com/png-vector/20191110/ourmid/pngtree-avatar-icon-profile-icon-member-login-vector-isolated-png-image_1978396.jpg" alt="Profile" class="profile-icon">
+            <!-- <span class="username">John Doe</span> -->
+            <div class="dropdown">
+                <ul>
+                    <li><a href="profile.html">View Profile</a></li>
+                    <li><a href="settings.html">Settings</a></li>
+                    <li><a href="Home.html">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>  
+
+ <div class="settings-container">
+    <div class="settings-header">
+        <h1>Travel Planner Settings</h1>
+        <p>Customize your preferences for a more personalized experience.</p>
+    </div>
+
+    <form id="settings-form" class="settings-form" onsubmit="saveSettings(event)">
+        <!-- Trip Preferences--> 
+        <div>
+            <label for="preferred-currency">Preferred Currency:</label>
+            <select id="preferred-currency">
+                <option value="USD">USD - United States Dollar</option>
+                <option value="EUR">EUR - Euro</option>
+                <option value="GBP">GBP - British Pound</option>
+                <option value="JPY">JPY - Japanese Yen</option>
+            </select>
+        </div>
+
+        <!-- Notification Preferences -->
+        <div>
+            <label for="email-notifications">Email Notifications:</label>
+            <input type="checkbox" id="email-notifications" checked>
+        </div>
+
+        <div>
+            <label for="sms-notifications">SMS Notifications:</label>
+            <input type="checkbox" id="sms-notifications">
+        </div>
+
+         <!--Default Trip Settings -->
+        <div>
+            <label for="default-trip-type">Default Trip Type:</label>
+            <select id="default-trip-type">
+                <option value="vacation">Vacation</option>
+                <option value="business">Business</option>
+                <option value="adventure">Adventure</option>
+                <option value="family">Family</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="special-requests">Special Requests (Optional):</label>
+            <textarea id="special-requests" rows="4" placeholder="Any special preferences or requests"></textarea>
+        </div>
+
+        <!-- Save Button -->
+        <div class="button-container">
+            <button type="submit">Save Settings</button>
+        </div>
+    </form>
+
+    <div id="settings-message" style="text-align: center; margin-top: 20px; font-size: 16px; color: green; display: none;">
+        Settings saved successfully!
+    </div>
+</div> 
+
+ <script>
+    // Function to handle form submission and save settings
+    function saveSettings(event) {
+        event.preventDefault(); // Prevent form submission
+
+        // Retrieve the form values
+        const currency = document.getElementById("preferred-currency").value;
+        const emailNotifications = document.getElementById("email-notifications").checked;
+        const smsNotifications = document.getElementById("sms-notifications").checked;
+        const tripType = document.getElementById("default-trip-type").value;
+        const specialRequests = document.getElementById("special-requests").value;
+
+        // Display success message
+        const message = document.getElementById("settings-message");
+        message.style.display = "block";
+
+        // Log the settings to the console (this is just for demonstration)
+        console.log("Settings saved:");
+        console.log("Preferred Currency:", currency);
+        console.log("Email Notifications:", emailNotifications);
+        console.log("SMS Notifications:", smsNotifications);
+        console.log("Default Trip Type:", tripType);
+        console.log("Special Requests:", specialRequests);
+
+        // Optionally, you could save these settings in localStorage or a database
+        // For now, we'll just simulate saving by showing the success message.
+
+        // Hide success message after 3 seconds
+        setTimeout(() => {
+            message.style.display = "none";
+        }, 3000);
+    }
+</script> 
+<footer>
+    <p>&copy; 2024 Travel Planner. All rights reserved.</p>
+</footer>
+</body>
+</html>
+
+<!-- It can be expanded with more settings, such as timezone selection, language preferences, or additional notification types, depending on your needs!-->
